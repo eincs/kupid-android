@@ -34,7 +34,7 @@
         android:targetSdkVersion="14" />
 
     <application
-        android:name=".BootstrapApplicationTest"
+        android:name=".BootstrapApplication"
         android:allowBackup="false"
         android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
