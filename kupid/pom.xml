@@ -8,7 +8,7 @@
 	</parent>
 	<packaging>apk</packaging>
 	<artifactId>kupid</artifactId>
-	
+
 	<repositories>
 		<repository>
 			<id>vcnc android public repo</id>
@@ -16,7 +16,7 @@
 			<url>https://vcnc-maven-android-public.s3.amazonaws.com/</url>
 		</repository>
 	</repositories>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
