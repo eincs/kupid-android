@@ -32,7 +32,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 				setResult(Activity.RESULT_OK);
 				finish();				
 			}
-		}, 1500);
+		}, 1000);
 	}
 
 }

@@ -1,20 +1,20 @@
 package com.eincs.android.kupid.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import butterknife.Views;
 
-import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.app.SherlockListActivity;
 import com.actionbarsherlock.view.Menu;
 import com.eincs.android.kupid.R;
 import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
 
-public class CategoryActivity extends SherlockActivity implements OnItemClickListener {
+public class CategoryActivity extends SherlockListActivity implements OnItemClickListener {
 
 	private final String[] VALUES = new String[] {
 			"Android Example ListActivity", "Adapter implementation",
@@ -42,8 +42,9 @@ public class CategoryActivity extends SherlockActivity implements OnItemClickLis
 				.contentLayout(R.layout.activity_category);
 		setContentView(helper.createView(this));
 		helper.initActionBar(this);
-		mListView = Views.findById(this, android.R.id.list);
+		mListView = getListView();
 		mListView.setAdapter(new CategoryAdapter(this));
+		mListView.setOnItemClickListener(this);
 	}
 
 	@Override
@@ -53,7 +54,8 @@ public class CategoryActivity extends SherlockActivity implements OnItemClickLis
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+		Intent intent = new Intent(this, NotificationActivity.class);
+		startActivity(intent);
 	}
 
 	private class CategoryAdapter extends ArrayAdapter<String> {
