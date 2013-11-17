@@ -1,64 +1,59 @@
 package com.eincs.android.kupid.activity;
 
-import android.app.ListActivity;
 import android.content.Context;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.AdapterView.OnItemClickListener;
+import butterknife.Views;
 
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
 import com.eincs.android.kupid.R;
+import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
 
-public class CategoryActivity extends ListActivity implements OnItemClickListener{
+public class CategoryActivity extends SherlockActivity implements OnItemClickListener {
 
 	private final String[] VALUES = new String[] {
-			"Android Example ListActivity",
-			"Adapter implementation",
-			"Simple List View With ListActivity",
-			"ListActivity Android",
-			"Android Example",
-			"ListActivity Source Code",
+			"Android Example ListActivity", "Adapter implementation",
+			"Simple List View With ListActivity", "ListActivity Android",
+			"Android Example", "ListActivity Source Code",
 			"ListView ListActivity Array Adapter",
-			"Android Example ListActivity",
-			"Adapter implementation",
-			"Simple List View With ListActivity",
-			"ListActivity Android",
-			"Android Example",
-			"ListActivity Source Code",
+			"Android Example ListActivity", "Adapter implementation",
+			"Simple List View With ListActivity", "ListActivity Android",
+			"Android Example", "ListActivity Source Code",
 			"ListView ListActivity Array Adapter",
-			"Android Example ListActivity",
-			"Adapter implementation",
-			"Simple List View With ListActivity",
-			"ListActivity Android",
-			"Android Example",
-			"ListActivity Source Code",
+			"Android Example ListActivity", "Adapter implementation",
+			"Simple List View With ListActivity", "ListActivity Android",
+			"Android Example", "ListActivity Source Code",
 			"ListView ListActivity Array Adapter",
-			"Android Example ListActivity"
-		};
-	
+			"Android Example ListActivity" };
+
 	private ListView mListView;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_category);
-		mListView = getListView();
+		FadingActionBarHelper helper = new FadingActionBarHelper()
+				.actionBarBackground(R.drawable.ab_background)
+				.headerLayout(R.layout.header)
+				.contentLayout(R.layout.activity_category);
+		setContentView(helper.createView(this));
+		helper.initActionBar(this);
+		mListView = Views.findById(this, android.R.id.list);
 		mListView.setAdapter(new CategoryAdapter(this));
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.category, menu);
-		return true;
+		return super.onCreateOptionsMenu(menu);
 	}
-	
+
 	@Override
-	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-		
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
 	}
 
 	private class CategoryAdapter extends ArrayAdapter<String> {
@@ -67,6 +62,6 @@ public class CategoryActivity extends ListActivity implements OnItemClickListene
 			super(context, android.R.layout.simple_list_item_1);
 			addAll(VALUES);
 		}
-		
+
 	}
 }

@@ -63,7 +63,11 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar">
         </activity>
-		<activity android:name=".activity.CategoryActivity" android:screenOrientation="portrait"></activity>
+		<activity
+		    android:name=".activity.CategoryActivity"
+		    android:screenOrientation="portrait"
+		    android:theme="@style/AppTheme.TranslucentActionBar">
+		</activity>
 		<activity android:name=".activity.NotificationActivity" android:screenOrientation="portrait"></activity>
 		<activity android:name=".activity.ContentActivity" android:screenOrientation="portrait"></activity>
     </application>
