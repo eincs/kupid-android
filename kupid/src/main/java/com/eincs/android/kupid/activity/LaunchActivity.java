@@ -1,12 +1,12 @@
-package com.eincs.android.bootstrap.activity;
-
-import com.eincs.android.bootstrap.R;
+package com.eincs.android.kupid.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 
-public class MainActivity extends Activity {
+import com.eincs.android.kupid.R;
+
+public class LaunchActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,4 +20,5 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+
 }

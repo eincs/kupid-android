@@ -1,4 +1,4 @@
-package com.eincs.android.bootstrap;
+package com.eincs.android.kupid;
 
 import android.app.Application;
 
