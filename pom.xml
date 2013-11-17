@@ -18,6 +18,8 @@
 	<modules>
 		<module>kupid</module>
 		<module>external/viewpagerindicator</module>
+		<module>external/fadingactionbar</module>
+		<module>external/actionbarshelock</module>
 	</modules>
 	
 	<dependencyManagement>

@@ -4,3 +4,6 @@
 [submodule "external/fadingactionbar"]
 	path = external/fadingactionbar
 	url = https://github.com/eincs/FadingActionBar.git
+[submodule "external/actionbarshelock"]
+	path = external/actionbarshelock
+	url = https://github.com/eincs/ActionBarSherlock.git
