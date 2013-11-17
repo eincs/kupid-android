@@ -30,11 +30,11 @@
     <uses-feature android:name="android.hardware.microphone" android:required="false" />
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="13"
         android:targetSdkVersion="14" />
 
     <application
-        android:name=".BootstrapApplication"
+        android:name=".KApplication"
         android:allowBackup="false"
         android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
@@ -46,12 +46,26 @@
         <activity
             android:name=".activity.LaunchActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 		</activity>
+		<activity
+            android:name="com.eincs.android.kupid.activity.TutorialActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+        </activity>
+        <activity
+            android:name="com.eincs.android.kupid.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+        </activity>
+		<activity android:name=".activity.CategoryActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name=".activity.NotificationActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name=".activity.ContentActivity" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">sample</string>
+    <string name="app_name">KUPID Notifier</string>
+    
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="action_read_all">Mark all as read</string>
+    
+    <string name="tutorial_login">Log in</string>
 
+    <string name="login_login">Log in</string>
+    
+    <string name="hello_world">Hello world!</string>
+    
 </resources>

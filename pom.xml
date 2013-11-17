@@ -17,6 +17,7 @@
 
 	<modules>
 		<module>kupid</module>
+		<module>external/viewpagerindicator</module>
 	</modules>
 	
 	<dependencyManagement>

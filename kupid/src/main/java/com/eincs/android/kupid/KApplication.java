@@ -5,7 +5,7 @@ import android.app.Application;
 /**
  * Application implementation of the application. 
  */
-public class BootstrapApplication extends Application {
+public class KApplication extends Application {
 
 	@Override
 	public void onCreate() {

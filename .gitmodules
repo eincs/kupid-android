@@ -1,0 +1,6 @@
+[submodule "external/viewpagerindicator"]
+	path = external/viewpagerindicator
+	url = https://github.com/eincs/Android-ViewPagerIndicator.git
+[submodule "external/fadingactionbar"]
+	path = external/fadingactionbar
+	url = https://github.com/eincs/FadingActionBar.git
