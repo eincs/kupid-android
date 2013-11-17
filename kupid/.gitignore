@@ -1,0 +1,14 @@
+gen/
+bin/
+classes/
+proguard/
+localize/
+locale/
+local.properties
+test/
+obj/
+report_missed_string.txt
+report_only_source.txt
+report_only_translate.txt
+.settings/
+target/
