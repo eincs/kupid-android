@@ -20,6 +20,7 @@
 		<module>external/viewpagerindicator</module>
 		<module>external/fadingactionbar</module>
 		<module>external/actionbarshelock</module>
+		<module>external/pulltorefresh</module>
 	</modules>
 	
 	<dependencyManagement>

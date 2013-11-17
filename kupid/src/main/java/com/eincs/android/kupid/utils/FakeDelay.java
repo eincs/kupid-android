@@ -34,6 +34,10 @@ public final class FakeDelay {
 		executeWithDelay(null, runnable);
 	}
 	
+	public static void executeWithDelay(final Runnable runnable, final long durationMillis) {
+		executeWithDelay(null, runnable, durationMillis);
+	}
+	
 	public static void executeWithDelay(final ProgressDialog dialog, final Runnable runnable) {
 		executeWithDelay(null, runnable, DEFAULT_DELAY_DURATION);
 	}

@@ -7,3 +7,6 @@
 [submodule "external/actionbarshelock"]
 	path = external/actionbarshelock
 	url = https://github.com/eincs/ActionBarSherlock.git
+[submodule "external/pulltorefresh"]
+	path = external/pulltorefresh
+	url = https://github.com/eincs/Android-PullToRefresh.git

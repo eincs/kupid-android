@@ -94,6 +94,12 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<dependency>
+			<groupId>com.github.chrisbanes.pulltorefresh</groupId>
+			<artifactId>pulltorefresh-library</artifactId>
+			<version>2.1.2-VCNC-SNAPSHOT</version>
+			<type>apklib</type>
+		</dependency>
 	</dependencies>
 
 	<build>
