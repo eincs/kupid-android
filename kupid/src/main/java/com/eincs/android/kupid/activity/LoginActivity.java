@@ -10,6 +10,7 @@ import butterknife.Views;
 
 import com.eincs.android.kupid.R;
 import com.eincs.android.kupid.utils.FakeDelay;
+import com.eincs.android.kupid.widget.Dialogs;
 
 public class LoginActivity extends Activity implements OnClickListener {
 
@@ -25,7 +26,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		ProgressDialog dialog = ProgressDialog.show(this, null, "Please wait...");
+		ProgressDialog dialog = Dialogs.showProgressDialog(this);
 		FakeDelay.executeWithDelay(dialog, new Runnable() {
 			@Override
 			public void run() {
