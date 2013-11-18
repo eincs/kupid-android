@@ -17,7 +17,10 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
-    <style name="Widget.ActionBar" parent="@style/Widget.Sherlock.Light.ActionBar.Solid.Inverse"></style>
+    <style name="Widget.ActionBar" parent="@style/Widget.Sherlock.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/crimson</item>
+        <item name="background">@color/crimson</item>
+    </style>
 
     <style name="Widget.Light" />
 
