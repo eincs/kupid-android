@@ -66,7 +66,7 @@ public class DummyRepository implements Repository{
 		return mExecutor.submit(new Callable<List<KNotificationModel>>() {
 			@Override
 			public List<KNotificationModel> call() throws Exception {
-				return null;
+				return DummyModels.NOTIFICATIONS;
 			}
 		});
 	}

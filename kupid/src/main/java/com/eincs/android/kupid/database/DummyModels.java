@@ -7,6 +7,7 @@ import android.content.res.Resources;
 
 import com.eincs.android.kupid.KApplication;
 import com.eincs.android.kupid.model.KCategoryModel;
+import com.eincs.android.kupid.model.KNotificationModel;
 import com.google.common.collect.Lists;
 
 public final class DummyModels {
@@ -33,5 +34,15 @@ public final class DummyModels {
 		result.setDescription(description);
 		return result;
 	}
-
+	
+	public static final List<KNotificationModel> NOTIFICATIONS;
+	static {
+		NOTIFICATIONS = Lists.newArrayList();
+		NOTIFICATIONS.add(createNotification());
+	}
+	
+	public static KNotificationModel createNotification() {
+		KNotificationModel result = new KNotificationModel();
+		return result;
+	}
 }
