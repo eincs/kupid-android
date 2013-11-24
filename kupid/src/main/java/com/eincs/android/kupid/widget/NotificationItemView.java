@@ -1,11 +1,14 @@
 package com.eincs.android.kupid.widget;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.eincs.android.kupid.KApplication;
 import com.eincs.android.kupid.R;
 import com.eincs.android.kupid.model.KNotificationModel;
 
@@ -49,38 +52,43 @@ public class NotificationItemView extends LinearLayout {
 	 * @param notificationModel 뷰의 데이터를 가지고 있는 {@link KNotificationModel} 인스턴스
 	 */
 	public void setContent(KNotificationModel notificationModel) {
-		// TODO: 이곳에서 데이터를 채워넣는다.
+		boolean read = notificationModel.isRead();
+		Resources resources = KApplication.getInstance().getResources();
+		setBackgroundColor(!read ? resources.getColor(android.R.color.white) : resources.getColor(android.R.color.transparent));
+		mTitle.setTypeface(!read ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
+		mContent1.setTypeface(!read ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
+		mContent2.setTypeface(!read ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
 	}
 	
-	public TextView getmTitle() {
+	public TextView getTitle() {
 		return mTitle;
 	}
 
-	public TextView getmTime() {
+	public TextView getTime() {
 		return mTime;
 	}
 
-	public TextView getmContent1() {
+	public TextView getContent1() {
 		return mContent1;
 	}
 
-	public TextView getmContent2() {
+	public TextView getContent2() {
 		return mContent2;
 	}
 
-	public ImageView getmStar() {
+	public ImageView getStar() {
 		return mStar;
 	}
 
-	public TextView getmTag1() {
+	public TextView getTag1() {
 		return mTag1;
 	}
 
-	public TextView getmTag2() {
+	public TextView getTag2() {
 		return mTag2;
 	}
 
-	public TextView getmTag3() {
+	public TextView getTag3() {
 		return mTag3;
 	}
 }

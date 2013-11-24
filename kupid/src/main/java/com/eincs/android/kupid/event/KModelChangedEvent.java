@@ -5,13 +5,22 @@ package com.eincs.android.kupid.event;
  */
 public class KModelChangedEvent {
 
-	private final Class<?> modelType;
+	private final Class<?>[] modelTypes;
 	
-	public KModelChangedEvent(Class<?> modelType) {
-		this.modelType = modelType;
+	public KModelChangedEvent(Class<?>[] types) {
+		this.modelTypes = types;
 	}
 
-	public Class<?> getModelType() {
-		return modelType;
+	public Class<?>[] getModelTypes() {
+		return modelTypes;
+	}
+	
+	public boolean isChangedType(Class<?> type) {
+		for (Class<?> modelType : modelTypes) {
+			if (modelType.equals(type)) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

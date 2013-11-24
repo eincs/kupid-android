@@ -1,5 +1,6 @@
 package com.eincs.android.kupid.database;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -11,7 +12,10 @@ import com.eincs.android.kupid.model.KCredentialModel;
 import com.eincs.android.kupid.model.KNotificationContentModel;
 import com.eincs.android.kupid.model.KNotificationModel;
 import com.eincs.android.kupid.model.KTutorialModel;
+import com.eincs.android.kupid.model.ModelPredicates;
 import com.eincs.android.kupid.utils.DefaultThreadPoolExecutor;
+import com.google.common.base.Predicates;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.ListeningExecutorService;
@@ -86,17 +90,26 @@ public class DummyRepository implements Repository {
 						category.setUnreadCount(0);
 					}
 				}
-				notifyChanges(KCategoryModel.class);
+				notifyChanges(KCategoryModel.class, KNotificationModel.class);
 				return null;
 			}
 		});
 	}
 
 	@Override
-	public ListenableFuture<Void> readNotification(String notificationId) {
+	public ListenableFuture<Void> readNotification(final String notificationId) {
 		return mExecutor.submit(new Callable<Void>() {
 			@Override
 			public Void call() throws Exception {
+				Collection<KNotificationModel> notifications = DummyModels.NOTIFICATIONS.values();
+				KNotificationModel notificationModel = Iterables.find(notifications, ModelPredicates.notificationById(notificationId));
+				notificationModel.setRead(true);
+				
+				KCategoryModel categoryModel = Iterables.find(DummyModels.CATEGORIES, ModelPredicates.categoryById(notificationModel.getCategoryId()));
+				int unreadCount = Iterables.size(Iterables.filter(notifications, ModelPredicates.unread(notificationModel.getCategoryId())));
+				categoryModel.setUnreadCount(Math.max(0, unreadCount));
+
+				notifyChanges(KCategoryModel.class, KNotificationModel.class);
 				return null;
 			}
 		});
@@ -112,7 +125,7 @@ public class DummyRepository implements Repository {
 		});
 	}
 	
-	private void notifyChanges(Class<?> type) {
-		KEventBus.getDefaultEventBus().postSticky(new KModelChangedEvent(type));
+	private void notifyChanges(Class<?>... types) {
+		KEventBus.getDefaultEventBus().postSticky(new KModelChangedEvent(types));
 	}
 }

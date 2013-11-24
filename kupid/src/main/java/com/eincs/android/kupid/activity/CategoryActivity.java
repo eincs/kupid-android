@@ -55,7 +55,7 @@ public class CategoryActivity extends SherlockListActivity {
 	protected void onResume() {
 		super.onResume();
 		mAdapter.addAllAsync(mRepository.getCategories());
-		KEventBus.getDefaultEventBus().register(this);
+		KEventBus.getDefaultEventBus().registerSticky(this);
 	}
 	
 	@Override

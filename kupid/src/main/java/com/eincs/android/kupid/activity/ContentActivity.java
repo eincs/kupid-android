@@ -1,11 +1,8 @@
 package com.eincs.android.kupid.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
@@ -13,10 +10,15 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import butterknife.Views;
 
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 import com.eincs.android.kupid.KApplication;
 import com.eincs.android.kupid.R;
+import com.eincs.android.kupid.controller.Controller;
 import com.eincs.android.kupid.database.Repository;
 import com.eincs.android.kupid.model.KNotificationContentModel;
+import com.eincs.android.kupid.utils.Extras;
 import com.eincs.android.kupid.utils.FakeDelay;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
@@ -24,10 +26,15 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 
-public class ContentActivity extends Activity implements
+public class ContentActivity extends SherlockActivity implements
 		FutureCallback<KNotificationContentModel>, OnClickListener,
 		OnRefreshListener<ScrollView> {
-
+	public static final String EXTRA_TITLE = "ContentActivity.EXTRA_TITLE";
+	public static final String EXTRA_NOTIFICATION_ID = "ContentActivity.EXTRA_NOTIFICATION_ID";
+	
+	private String mNotificationId;
+	
+	private Controller mController;
 	private Repository mRepository;
 
 	private PullToRefreshScrollView mScroll;
@@ -48,6 +55,10 @@ public class ContentActivity extends Activity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_content);
+		String activityTitle = Extras.getString(this, EXTRA_TITLE);
+		getSupportActionBar().setTitle(activityTitle);
+		mNotificationId = Extras.getString(this, EXTRA_NOTIFICATION_ID);
+		mController = KApplication.getController();
 		mRepository = KApplication.getRepositoy();
 		mScroll = (PullToRefreshScrollView) Views.findById(this, R.id.content_scroll);
 		mScroll.setOnRefreshListener(this);
@@ -67,13 +78,14 @@ public class ContentActivity extends Activity implements
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.content, menu);
+		getSupportMenuInflater().inflate(R.menu.content, menu);
 		return true;
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
+		mRepository.readNotification(mNotificationId);
 		Futures.addCallback(mRepository.getNotificationContent(null), this);
 	}
 

@@ -28,11 +28,11 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
-public class NotificationActivity extends SherlockActivity implements
-		OnItemClickListener, OnRefreshListener<ListView> {
+public class NotificationActivity extends SherlockActivity implements OnRefreshListener<ListView> {
 	public static final String EXTRA_TITLE = "NotificationActivity.EXTRA_TITLE";
 	public static final String EXTRA_CATEGORY_ID = "NotificationActivity.EXTRA_CATEGORY_ID";
 	
+	private String mTitle;
 	private String mCategoryId;
 	private Repository mRepository;
 	private PullToRefreshListView mListView;
@@ -42,15 +42,15 @@ public class NotificationActivity extends SherlockActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_notification);
-		String activityTitle = Extras.getString(this, EXTRA_TITLE);
-		getSupportActionBar().setTitle(activityTitle);
+		mTitle = Extras.getString(this, EXTRA_TITLE);
+		getSupportActionBar().setTitle(mTitle);
 		mCategoryId = Extras.getString(this, EXTRA_CATEGORY_ID);
 		mRepository = KApplication.getRepositoy();
 		mAdapter = new NotificationAdapter(this);
 		mAdapter.addAllAsync(mRepository.getNotifications(mCategoryId));
 		mListView = (PullToRefreshListView) Views.findById(this,android.R.id.list);
 		mListView.setAdapter(mAdapter);
-		mListView.setOnItemClickListener(this);
+		mListView.setOnItemClickListener(mAdapter);
 		mListView.setOnRefreshListener(this);
 	}
 
@@ -63,7 +63,7 @@ public class NotificationActivity extends SherlockActivity implements
 	@Override
 	protected void onResume() {
 		super.onResume();
-		KEventBus.getDefaultEventBus().register(this);
+		KEventBus.getDefaultEventBus().registerSticky(this);
 	}
 	
 	@Override
@@ -98,13 +98,7 @@ public class NotificationActivity extends SherlockActivity implements
 		}, 1000);
 	}
 
-	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		Intent intent = new Intent(this, ContentActivity.class);
-		startActivity(intent);
-	}
-
-	private class NotificationAdapter extends AbsArrayAdapter<KNotificationModel> {
+	private class NotificationAdapter extends AbsArrayAdapter<KNotificationModel> implements OnItemClickListener {
 
 		public NotificationAdapter(Context context) {
 			super(context, R.layout.item_notification);
@@ -116,6 +110,15 @@ public class NotificationActivity extends SherlockActivity implements
 			NotificationItemView itemView = (NotificationItemView) getOrCreateView(convertView, parent);
 			itemView.setContent(notificationModel);
 			return itemView;
+		}
+		
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+			KNotificationModel notificationModel = getItem(position - 1);
+			Intent intent = new Intent(NotificationActivity.this, ContentActivity.class);
+			intent.putExtra(ContentActivity.EXTRA_TITLE, mTitle);
+			intent.putExtra(ContentActivity.EXTRA_NOTIFICATION_ID, notificationModel.getId());
+			startActivity(intent);
 		}
 	}
 }

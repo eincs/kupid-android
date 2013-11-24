@@ -67,7 +67,7 @@ public final class DummyModels {
 			int unreadCount = categoryModel.getUnreadCount();
 			String categoryId = categoryModel.getId();
 			for (int i = 0; i < 200; i++) {
-				boolean read = i < unreadCount ? true : false;
+				boolean read = i < unreadCount ? false : true;
 				NOTIFICATIONS.put(categoryModel.getId(), createNotification(i, categoryId, read));
 			}
 		}
@@ -76,7 +76,7 @@ public final class DummyModels {
 	public static KNotificationModel createNotification(int id, String categoryId, boolean read) {
 		KNotificationModel result = new KNotificationModel();
 		result.setCategoryId(categoryId);
-		result.setNotificationId(String.format("%s_%s", categoryId, Integer.toString(id)));
+		result.setId(String.format("%s_%s", categoryId, Integer.toString(id)));
 		result.setRead(read);
 		return result;
 	}

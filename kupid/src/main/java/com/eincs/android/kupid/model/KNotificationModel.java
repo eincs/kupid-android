@@ -2,18 +2,18 @@ package com.eincs.android.kupid.model;
 
 public class KNotificationModel implements IModel {
 
-	private String notificationId;
+	private String id;
 	
 	private String categoryId;
 	
 	private boolean read;
 
-	public String getNotificationId() {
-		return notificationId;
+	public String getId() {
+		return id;
 	}
 
-	public void setNotificationId(String notificationId) {
-		this.notificationId = notificationId;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getCategoryId() {

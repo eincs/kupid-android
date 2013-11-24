@@ -1,6 +1,7 @@
 package com.eincs.android.kupid.widget;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -43,33 +44,32 @@ public class CategoryItemView extends RelativeLayout {
 	 */
 	public void setContent(KCategoryModel categoryModel) {
 		String header = categoryModel.getHeader();
-		if (!Strings.isNullOrEmpty(header)) {
-			mHeader.setVisibility(View.VISIBLE);
-			mHeader.setText(header);
-		} else {
-			mHeader.setVisibility(View.GONE);
-		}
-		mText1.setText(categoryModel.getTitle());
-		mText2.setText(categoryModel.getDescription());
+		boolean hasHaeder = !Strings.isNullOrEmpty(header);
+		mHeader.setVisibility(hasHaeder?View.VISIBLE:View.GONE);
+		mHeader.setText(header);
 		int unreadCount = categoryModel.getUnreadCount();
-		mBadge.setVisibility(unreadCount == 0 ? View.GONE : View.VISIBLE);
+		boolean hasUnread = unreadCount > 0;
+		mText1.setText(categoryModel.getTitle());
+		mText1.setTypeface(hasUnread ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
+		mText2.setText(categoryModel.getDescription());
+		mText2.setTypeface(hasUnread ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
+		mBadge.setVisibility(hasUnread ? View.VISIBLE : View.GONE);
 		mBadge.setText(Integer.toString(unreadCount));
 	}
 	
-	public TextView getmHeader() {
+	public TextView getHeader() {
 		return mHeader;
 	}
 
-	public TextView getmBadge() {
+	public TextView getBadge() {
 		return mBadge;
 	}
 
-	public TextView getmText1() {
+	public TextView getText1() {
 		return mText1;
 	}
 
-	public TextView getmText2() {
+	public TextView getText2() {
 		return mText2;
 	}
-	
 }
