@@ -30,7 +30,7 @@ public class SettingActivity extends SherlockPreferenceActivity {
 				dialog.setTitle(R.string.setting_logout);
 				dialog.setMessage(R.string.setting_logout_message);
 				dialog.setIcon(R.drawable.ic_launcher);
-				dialog.setPositiveButton(R.string.yes, new OnClickListener() {
+				dialog.setPositiveButton(android.R.string.yes, new OnClickListener() {
 					
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -38,7 +38,7 @@ public class SettingActivity extends SherlockPreferenceActivity {
 						
 					}
 				});
-				dialog.setNegativeButton(R.string.no, new OnClickListener() {
+				dialog.setNegativeButton(android.R.string.no, new OnClickListener() {
 					
 					@Override
 					public void onClick(DialogInterface dialog, int which) {

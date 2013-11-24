@@ -47,6 +47,10 @@ public interface Repository {
 	 * @return 알림에 대한 리스트
 	 */
 	public ListenableFuture<List<KNotificationModel>> getNotifications(String categoryId);
+
+	public ListenableFuture<Void> readAllNotification(String categoryId);
+	
+	public ListenableFuture<Void> readNotification(String notificationId);
 	
 	/**
 	 * 특정 알림에 대한 내용을 데이터베이스에서 가져온다.

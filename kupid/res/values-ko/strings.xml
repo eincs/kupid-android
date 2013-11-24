@@ -9,9 +9,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="please_wait">잠시만 기다리세요#8230;</string>
     
-    <string name="yes">예</string>
-    <string name="no">아니오</string>
-    
     <string name="setting_alarm">알람</string>
     <string name="setting_sound">소리</string>
     <string name="setting_vibration">진동</string>

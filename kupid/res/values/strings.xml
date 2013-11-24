@@ -19,9 +19,11 @@
     <string name="hello_world">Hello world!</string>
     <string name="please_wait">Please wait#8230;</string>
     
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
-
+    <string name="dialog_messagae_read_all">Rad all messages?</string>
+    
+    <string name="category_header_common">Common Notification</string>
+    <string name="category_header_subject">Subject Notification</string>
+    
     <string name="setting_notice_desc">Notice on KUPID</string>
     <string name="setting_schedule_desc">College schedule for Korea University Students</string>
     
