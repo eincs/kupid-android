@@ -2,15 +2,17 @@ package com.eincs.android.kupid.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.eincs.android.kupid.R;
 import com.eincs.android.kupid.model.KCategoryModel;
 
-public class CategoryItemView extends RelativeLayout{
+public class CategoryItemView extends RelativeLayout {
 	private TextView mText1;
 	private TextView mText2;
+	private TextView mBadge;
 	
 	public CategoryItemView(Context context) {
 		this(context, null);
@@ -29,6 +31,7 @@ public class CategoryItemView extends RelativeLayout{
 		super.onFinishInflate();
 		mText1 = (TextView) findViewById(R.id.item_category_text1);
 		mText2 = (TextView) findViewById(R.id.item_category_text2);
+		mBadge = (TextView) findViewById(R.id.item_category_badge);
 	}
 
 	/**
@@ -38,6 +41,9 @@ public class CategoryItemView extends RelativeLayout{
 	public void setContent(KCategoryModel categoryModel) {
 		mText1.setText(categoryModel.getTitle());
 		mText2.setText(categoryModel.getDescription());
+		int unreadCount = categoryModel.getUnreadCount();
+		mBadge.setVisibility(unreadCount == 0 ? View.GONE : View.VISIBLE);
+		mBadge.setText(Integer.toString(unreadCount));
 	}
 	
 	public TextView getmText1() {

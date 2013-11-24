@@ -2,7 +2,6 @@
 <com.eincs.android.kupid.widget.CategoryItemView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:paddingBottom="10dp"
     android:paddingLeft="15dp"
     android:paddingRight="15dp"
@@ -12,16 +11,34 @@
         android:id="@+id/item_category_text1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Something Important1"
+        android:text="@string/subject_algorithm"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-    
+
     <TextView
         android:id="@+id/item_category_text2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/item_category_text1"
         android:layout_below="@id/item_category_text1"
-        android:text="Something Important2"
+        android:text="@string/subject_algorithm_desc"
         android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/item_category_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/badge"
+        android:gravity="center"
+        android:minHeight="25dp"
+        android:minWidth="25dp"
+        android:paddingBottom="3dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="3dp"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textStyle="bold" />
 
 </com.eincs.android.kupid.widget.CategoryItemView>
