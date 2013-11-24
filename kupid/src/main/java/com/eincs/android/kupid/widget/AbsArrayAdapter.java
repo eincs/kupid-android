@@ -57,13 +57,12 @@ public abstract class AbsArrayAdapter<T> extends ArrayAdapter<T> implements Futu
 		clear();
 		addAll(result);
 		notifyDataSetChanged();
+		setNotifyOnChange(true);
 	}
 
 	@Override
 	public void onFailure(Throwable t) {
-		setNotifyOnChange(false);
 		clear();
-		notifyDataSetChanged();
 		Log.d(TAG, Strings.nullToEmpty(t.getMessage()), t);
 	}
 	
