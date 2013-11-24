@@ -46,7 +46,7 @@ public class DummyRepository implements Repository{
 		return mExecutor.submit(new Callable<List<KTutorialModel>>() {
 			@Override
 			public List<KTutorialModel> call() throws Exception {
-				return null;
+				return DummyModels.TUTORIALS;
 			}
 		});
 	}

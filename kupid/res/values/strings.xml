@@ -8,7 +8,14 @@
     <string name="action_view_original">View Original</string>
     <string name="action_read_all">Read All</string>
     <string name="tutorial_login">Log in</string>
+    <string name="tutorial_description1">Get new KUPID notification immediately</string>
+    <string name="tutorial_description2">Get your new notice with few clicks</string>
+    <string name="tutorial_description3">You don\'t need yo login for the information</string>
+    <string name="tutorial_description4">Your Account information stores securly</string>
+    <string name="tutorial_description5">Don\'t forget your assignment for your course</string>
     <string name="login_login">Log in</string>
+    <string name="login_hint_id">Your KUPID ID</string>
+    <string name="login_hint_pw">Your Password</string>
     <string name="hello_world">Hello world!</string>
     <string name="please_wait">Please wait#8230;</string>
     

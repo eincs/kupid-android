@@ -6,14 +6,26 @@ import android.content.Context;
 import android.content.res.Resources;
 
 import com.eincs.android.kupid.KApplication;
+import com.eincs.android.kupid.R;
 import com.eincs.android.kupid.model.KCategoryModel;
 import com.eincs.android.kupid.model.KNotificationModel;
+import com.eincs.android.kupid.model.KTutorialModel;
 import com.google.common.collect.Lists;
 
 public final class DummyModels {
 	private DummyModels() {}
 	private static final Context CONTEXT = KApplication.getInstance();
 	private static final Resources RESOURCE = CONTEXT.getResources();
+	
+	public static final List<KTutorialModel> TUTORIALS;
+	static {
+		TUTORIALS = Lists.newArrayList();
+		TUTORIALS.add(new KTutorialModel(R.string.tutorial_description1, R.drawable.bg_tutorial_1));
+		TUTORIALS.add(new KTutorialModel(R.string.tutorial_description2, R.drawable.bg_tutorial_2));
+		TUTORIALS.add(new KTutorialModel(R.string.tutorial_description3, R.drawable.bg_tutorial_3));
+		TUTORIALS.add(new KTutorialModel(R.string.tutorial_description4, R.drawable.bg_tutorial_4));
+		TUTORIALS.add(new KTutorialModel(R.string.tutorial_description5, R.drawable.bg_tutorial_5));
+	}
 	
 	public static final List<KCategoryModel> CATEGORIES;
 	static {
