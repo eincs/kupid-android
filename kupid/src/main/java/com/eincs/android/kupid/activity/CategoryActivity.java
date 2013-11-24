@@ -3,6 +3,7 @@ package com.eincs.android.kupid.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -49,13 +50,22 @@ public class CategoryActivity extends SherlockListActivity implements OnItemClic
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		return super.onCreateOptionsMenu(menu);
+		getSupportMenuInflater().inflate(R.menu.category, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+		Intent intent = new Intent(this, NotificationActivity.class);
+		startActivity(intent);
+		return true;
 	}
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		Intent intent = new Intent(this, NotificationActivity.class);
-		startActivity(intent);
+		// 이곳에서 SettingActivity를 호출하세요.
+		// Intent intent = new Intent(this, SettingActivity.class);
+		// startActivity(intent);
 	}
 
 	private class CategoryAdapter extends AbsArrayAdapter<KCategoryModel> {
