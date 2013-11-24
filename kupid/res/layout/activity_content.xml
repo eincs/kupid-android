@@ -24,7 +24,7 @@
             android:paddingTop="10dp" >
 
             <TextView
-                android:id="@+id/item_content_title"
+                android:id="@+id/content_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Something Important!"
@@ -32,22 +32,22 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/item_content_time"
+                android:id="@+id/content_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/item_content_title"
+                android:layout_below="@id/content_title"
                 android:text="2013년 11월 24일 일요일 오전 12:10" />
 
             <LinearLayout
-                android:id="@+id/item_content_tags"
+                android:id="@+id/content_tags"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/item_content_time"
+                android:layout_below="@id/content_time"
                 android:orientation="horizontal"
                 android:paddingTop="5dp" >
 
                 <TextView
-                    android:id="@+id/item_content_tag1"
+                    android:id="@+id/content_tag1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="3dp"
@@ -59,7 +59,7 @@
                     android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/item_content_tag2"
+                    android:id="@+id/content_tag2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="3dp"
@@ -71,7 +71,7 @@
                     android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/item_content_tag3"
+                    android:id="@+id/content_tag3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="3dp"
@@ -84,10 +84,10 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/item_content_text"
+                android:id="@+id/content_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/item_content_tags"
+                android:layout_below="@id/content_tags"
                 android:paddingTop="10dp"
                 android:text="하하 이거 어떻게 한담 ㅋㅋ" />
         </RelativeLayout>
@@ -104,16 +104,19 @@
             android:paddingTop="10dp" >
 
             <com.eincs.android.kupid.widget.SquareImageButton
+                android:id="@+id/content_btn1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
             <com.eincs.android.kupid.widget.SquareImageButton
+                android:id="@+id/content_btn2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
             <com.eincs.android.kupid.widget.SquareImageButton
+                android:id="@+id/content_btn3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
