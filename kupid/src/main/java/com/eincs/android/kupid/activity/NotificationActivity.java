@@ -12,7 +12,10 @@ import butterknife.Views;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
+import com.eincs.android.kupid.KApplication;
 import com.eincs.android.kupid.R;
+import com.eincs.android.kupid.database.Repository;
+import com.eincs.android.kupid.model.KNotificationModel;
 import com.eincs.android.kupid.utils.FakeDelay;
 import com.eincs.android.kupid.widget.AbsArrayAdapter;
 import com.eincs.android.kupid.widget.NotificationItemView;
@@ -23,21 +26,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 public class NotificationActivity extends SherlockActivity implements
 		OnItemClickListener, OnRefreshListener<ListView> {
 
-	private final String[] VALUES = new String[] {
-			"Android Example ListActivity", "Adapter implementation",
-			"Simple List View With ListActivity", "ListActivity Android",
-			"Android Example", "ListActivity Source Code",
-			"ListView ListActivity Array Adapter",
-			"Android Example ListActivity", "Adapter implementation",
-			"Simple List View With ListActivity", "ListActivity Android",
-			"Android Example", "ListActivity Source Code",
-			"ListView ListActivity Array Adapter",
-			"Android Example ListActivity", "Adapter implementation",
-			"Simple List View With ListActivity", "ListActivity Android",
-			"Android Example", "ListActivity Source Code",
-			"ListView ListActivity Array Adapter",
-			"Android Example ListActivity" };
-
+	private Repository mRepository;
 	private PullToRefreshListView mListView;
 	private NotificationAdapter mAdapter;
 
@@ -45,9 +34,10 @@ public class NotificationActivity extends SherlockActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_notification);
+		mRepository = KApplication.getRepositoy();
 		mAdapter = new NotificationAdapter(this);
-		mListView = (PullToRefreshListView) Views.findById(this,
-				android.R.id.list);
+		mAdapter.addAllAsync(mRepository.getNotifications(null));
+		mListView = (PullToRefreshListView) Views.findById(this,android.R.id.list);
 		mListView.setAdapter(mAdapter);
 		mListView.setOnItemClickListener(this);
 		mListView.setOnRefreshListener(this);
@@ -55,9 +45,16 @@ public class NotificationActivity extends SherlockActivity implements
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		return super.onCreateOptionsMenu(menu);
+		getSupportMenuInflater().inflate(R.menu.notification, menu);
+		return true;
 	}
 
+	@Override
+	protected void onResume() {
+		super.onResume();
+		mAdapter.addAllAsync(mRepository.getNotifications(null));
+	}
+	
 	@Override
 	public void onRefresh(PullToRefreshBase<ListView> refreshView) {
 		FakeDelay.executeWithDelay(new Runnable() {
@@ -69,22 +66,22 @@ public class NotificationActivity extends SherlockActivity implements
 	}
 
 	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position,
-			long id) {
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		Intent intent = new Intent(this, ContentActivity.class);
 		startActivity(intent);
 	}
 
-	private class NotificationAdapter extends AbsArrayAdapter<String> {
+	private class NotificationAdapter extends AbsArrayAdapter<KNotificationModel> {
 
 		public NotificationAdapter(Context context) {
 			super(context, R.layout.item_notification);
-			addAll(VALUES);
 		}
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
+			KNotificationModel notificationModel = getItem(position);
 			NotificationItemView itemView = (NotificationItemView) getOrCreateView(convertView, parent);
+			itemView.setContent(notificationModel);
 			return itemView;
 		}
 	}

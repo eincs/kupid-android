@@ -12,16 +12,16 @@
         android:id="@+id/item_category_text1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="6dip"
-        android:layout_marginTop="6dip"
+        android:text="Something Important1"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
+    
     <TextView
         android:id="@+id/item_category_text2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@android:id/text1"
-        android:layout_below="@android:id/text1"
+        android:layout_alignLeft="@id/item_category_text1"
+        android:layout_below="@id/item_category_text1"
+        android:text="Something Important2"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </com.eincs.android.kupid.widget.CategoryItemView>

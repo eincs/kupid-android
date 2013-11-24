@@ -3,6 +3,7 @@ package com.eincs.android.kupid.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -36,20 +37,24 @@ public class CategoryActivity extends SherlockListActivity implements OnItemClic
 		helper.initActionBar(this);
 		mRepository = KApplication.getRepositoy();
 		mAdapter = new CategoryAdapter(this);
+		mAdapter.addAllAsync(mRepository.getCategories());
 		mListView = getListView();
 		mListView.setAdapter(mAdapter);
 		mListView.setOnItemClickListener(this);
 	}
 
 	@Override
-	protected void onResume() {
-		super.onResume();
-		mAdapter.addAllAsync(mRepository.getCategories());
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getSupportMenuInflater().inflate(R.menu.category, menu);
+		return true;
 	}
 	
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		return super.onCreateOptionsMenu(menu);
+	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+		// 이곳에서 SettingActivity를 호출하세요.
+		// Intent intent = new Intent(this, SettingActivity.class);
+		// startActivity(intent);
+		return true;
 	}
 
 	@Override

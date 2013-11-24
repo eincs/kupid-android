@@ -1,9 +1,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_export_calendar"
         android:orderInCategory="100"
-        android:showAsAction="always"
-        android:title="@string/action_settings"/>
+        android:showAsAction="collapseActionView"
+        android:title="@string/action_export_calendar"/>
+    <item
+        android:id="@+id/action_export_text"
+        android:orderInCategory="100"
+        android:showAsAction="collapseActionView"
+        android:title="@string/action_export_text"/>
+    <item
+        android:id="@+id/action_view_original"
+        android:orderInCategory="100"
+        android:showAsAction="collapseActionView"
+        android:title="@string/action_view_original"/>
 
 </menu>
