@@ -47,7 +47,7 @@ public class NotificationActivity extends SherlockActivity implements
 		mCategoryId = Extras.getString(this, EXTRA_CATEGORY_ID);
 		mRepository = KApplication.getRepositoy();
 		mAdapter = new NotificationAdapter(this);
-		mAdapter.addAllAsync(mRepository.getNotifications(null));
+		mAdapter.addAllAsync(mRepository.getNotifications(mCategoryId));
 		mListView = (PullToRefreshListView) Views.findById(this,android.R.id.list);
 		mListView.setAdapter(mAdapter);
 		mListView.setOnItemClickListener(this);
@@ -73,7 +73,7 @@ public class NotificationActivity extends SherlockActivity implements
 	}
 	
 	public void onEventMainThread(KModelChangedEvent event) {
-		mAdapter.addAllAsync(mRepository.getNotifications(null));
+		mAdapter.addAllAsync(mRepository.getNotifications(mCategoryId));
 	}
 	
 	@Override

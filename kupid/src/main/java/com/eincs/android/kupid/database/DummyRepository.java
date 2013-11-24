@@ -64,11 +64,11 @@ public class DummyRepository implements Repository {
 	}
 
 	@Override
-	public ListenableFuture<List<KNotificationModel>> getNotifications(String categoryId) {
+	public ListenableFuture<List<KNotificationModel>> getNotifications(final String categoryId) {
 		return mExecutor.submit(new Callable<List<KNotificationModel>>() {
 			@Override
 			public List<KNotificationModel> call() throws Exception {
-				return DummyModels.NOTIFICATIONS;
+				return DummyModels.NOTIFICATIONS.get(categoryId);
 			}
 		});
 	}

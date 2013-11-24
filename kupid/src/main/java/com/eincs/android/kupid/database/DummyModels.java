@@ -1,6 +1,7 @@
 package com.eincs.android.kupid.database;
 
 import java.util.List;
+import java.util.Map;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -11,6 +12,7 @@ import com.eincs.android.kupid.model.KCategoryModel;
 import com.eincs.android.kupid.model.KNotificationModel;
 import com.eincs.android.kupid.model.KTutorialModel;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 
 public final class DummyModels {
 	private DummyModels() {}
@@ -53,13 +55,21 @@ public final class DummyModels {
 		return result;
 	}
 	
-	public static final List<KNotificationModel> NOTIFICATIONS;
+	public static final Map<String, List<KNotificationModel>> NOTIFICATIONS;
 	static {
-		NOTIFICATIONS = Lists.newArrayList();
-		NOTIFICATIONS.add(createNotification());
+		NOTIFICATIONS = Maps.newHashMap();
+		for (KCategoryModel categoryModel : CATEGORIES) {
+			List<KNotificationModel> notifications = Lists.newArrayList();
+			int unreadCount = categoryModel.getUnreadCount();
+			for (int i = 0; i < 200; i++) {
+				boolean read = i < unreadCount ? true : false;
+				notifications.add(createNotification(read));
+			}
+			NOTIFICATIONS.put(categoryModel.getId(), notifications);
+		}
 	}
 	
-	public static KNotificationModel createNotification() {
+	public static KNotificationModel createNotification(boolean read) {
 		KNotificationModel result = new KNotificationModel();
 		return result;
 	}
