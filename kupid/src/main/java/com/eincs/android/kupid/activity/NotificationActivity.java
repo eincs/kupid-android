@@ -36,8 +36,7 @@ public class NotificationActivity extends SherlockActivity implements
 		setContentView(R.layout.activity_notification);
 		mRepository = KApplication.getRepositoy();
 		mAdapter = new NotificationAdapter(this);
-		mListView = (PullToRefreshListView) Views.findById(this,
-				android.R.id.list);
+		mListView = (PullToRefreshListView) Views.findById(this,android.R.id.list);
 		mListView.setAdapter(mAdapter);
 		mListView.setOnItemClickListener(this);
 		mListView.setOnRefreshListener(this);
