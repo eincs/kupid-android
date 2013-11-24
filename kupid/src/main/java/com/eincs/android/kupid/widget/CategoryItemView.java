@@ -36,7 +36,8 @@ public class CategoryItemView extends RelativeLayout{
 	 * @param categoryModel 뷰의 데이터를 가지고 있는 {@link KCategoryModel} 인스턴스
 	 */
 	public void setContent(KCategoryModel categoryModel) {
-		// TODO: 이곳에서 데이터를 채워넣는다.
+		mText1.setText(categoryModel.getTitle());
+		mText2.setText(categoryModel.getDescription());
 	}
 	
 	public TextView getmText1() {
