@@ -30,22 +30,23 @@ public final class DummyModels {
 	public static final List<KCategoryModel> CATEGORIES;
 	static {
 		CATEGORIES = Lists.newArrayList();
-		CATEGORIES.add(createCategory(R.string.setting_notice, R.string.setting_notice_desc));
-		CATEGORIES.add(createCategory(R.string.setting_schedule, R.string.setting_schedule_desc));
-		CATEGORIES.add(createCategory(R.string.subject_hci, R.string.subject_hci_desc));
-		CATEGORIES.add(createCategory(R.string.subject_face_action, R.string.subject_face_action_desc));
-		CATEGORIES.add(createCategory(R.string.subject_probability, R.string.subject_probability_desc));
-		CATEGORIES.add(createCategory(R.string.subject_history, R.string.subject_history_desc));
-		CATEGORIES.add(createCategory(R.string.subject_algorithm, R.string.subject_algorithm_desc));
-		CATEGORIES.add(createCategory(R.string.subject_ip, R.string.subject_ip_desc));
+		CATEGORIES.add(createCategory(R.string.setting_notice, R.string.setting_notice_desc, 2));
+		CATEGORIES.add(createCategory(R.string.setting_schedule, R.string.setting_schedule_desc, 0));
+		CATEGORIES.add(createCategory(R.string.subject_hci, R.string.subject_hci_desc, 1));
+		CATEGORIES.add(createCategory(R.string.subject_face_action, R.string.subject_face_action_desc, 0));
+		CATEGORIES.add(createCategory(R.string.subject_probability, R.string.subject_probability_desc, 0));
+		CATEGORIES.add(createCategory(R.string.subject_history, R.string.subject_history_desc, 0));
+		CATEGORIES.add(createCategory(R.string.subject_algorithm, R.string.subject_algorithm_desc, 0));
+		CATEGORIES.add(createCategory(R.string.subject_ip, R.string.subject_ip_desc, 123));
 	}
 	
-	public static KCategoryModel createCategory(int titleResId, int descriptionResId) {
+	public static KCategoryModel createCategory(int titleResId, int descriptionResId, int unradCount) {
 		String title = RESOURCE.getString(titleResId);
 		String description = RESOURCE.getString(descriptionResId);
 		KCategoryModel result = new KCategoryModel();
 		result.setTitle(title);
 		result.setDescription(description);
+		result.setUnreadCount(unradCount);
 		return result;
 	}
 	
