@@ -8,5 +8,20 @@
     <string name="login_login">Log in</string>
     <string name="hello_world">Hello world!</string>
     <string name="please_wait">잠시만 기다리세요#8230;</string>
+    
+    <string name="setting_alarm">알람</string>
+    <string name="setting_sound">소리</string>
+    <string name="setting_vibration">진동</string>
+    <string name="setting_detail">세부사항</string>
+    <string name="setting_notice">공지사항</string>
+    <string name="setting_schedule">학사일정</string>
+    <string name="setting_logout">로그 아웃</string>
+    
+    <string name="subject_hci">인간 컴퓨터 상호작용 입문</string>
+    <string name="subject_probability">확률 및 통계학</string>
+    <string name="subject_history">역사는 어떻게 서술되는가</string>
+    <string name="subject_face_action">외모와 인간행동</string>
+    <string name="subject_algorithm">알고리즘</string>
+    <string name="subject_ip">인터넷 프로토콜</string>
 
 </resources>

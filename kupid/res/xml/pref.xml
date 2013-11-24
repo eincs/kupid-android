@@ -2,13 +2,44 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <PreferenceCategory android:title="@string/action_settings" >
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/setting_alarm">
+        <Preference
+            android:title="@string/setting_sound" />
+        <Preference
+            android:title="@string/setting_vibration" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/setting_detail">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="settingNotice"
+            android:title="@string/setting_notice"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="settingNotice"
+            android:title="@string/setting_schedule"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="settingNotice"
+            android:title="@string/subject_hci"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="settingNotice"
+            android:title="@string/subject_probability"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="settingNotice"
+            android:title="@string/subject_history"/>
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/setting_logout" >
         <ListPreference
-            android:dialogTitle="클릭시 나타나는 다이얼로그의 타이틀"
-            android:entries="@array/engine_entries"
-            android:entryValues="@array/engine_values"
-            android:key="searching_engine_setting"
-            android:summary="리스트설정항목의 설명내용"
-            android:title="리스트설정항목의 타이틀" />
+            android:key="logoutSetting"
+            android:entries="@array/logout_entries"
+            android:entryValues="@array/logout_values"
+            android:title="@string/setting_logout" />
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -15,7 +15,15 @@
     <string name="setting_alarm">Alarm</string>
     <string name="setting_sound">Sound</string>
     <string name="setting_vibration">Vibration</string>
+    <string name="setting_detail">Detail</string>
     <string name="setting_notice">Notice</string>
     <string name="setting_schedule">College schedule</string>
-
+    <string name="setting_logout">Log out</string>
+    
+    <string name="subject_hci">Human Computer Interaction</string>
+    <string name="subject_probability">Probability and statistics</string>
+    <string name="subject_history">How history descripted</string>
+    <string name="subject_face_action">Human face and action</string>
+    <string name="subject_algorithm">Algorithm</string>
+    <string name="subject_ip">Internet Protocol</string>
 </resources>
