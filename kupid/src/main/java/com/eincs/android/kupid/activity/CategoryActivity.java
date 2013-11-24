@@ -14,6 +14,7 @@ import com.actionbarsherlock.app.SherlockListActivity;
 import com.actionbarsherlock.view.Menu;
 import com.eincs.android.kupid.R;
 import com.eincs.android.kupid.widget.AbsArrayAdapter;
+import com.eincs.android.kupid.widget.CategoryItemView;
 import com.eincs.android.kupid.widget.NotificationItemView;
 import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
 
@@ -70,7 +71,7 @@ public class CategoryActivity extends SherlockListActivity implements OnItemClic
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			NotificationItemView itemView = (NotificationItemView) getOrCreateView(convertView, parent);
+			CategoryItemView itemView = (CategoryItemView) getOrCreateView(convertView, parent);
 			return itemView;
 		}
 
