@@ -7,8 +7,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.actionbarsherlock.app.SherlockListActivity;
 import com.actionbarsherlock.view.Menu;
@@ -20,7 +20,7 @@ import com.eincs.android.kupid.widget.AbsArrayAdapter;
 import com.eincs.android.kupid.widget.CategoryItemView;
 import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
 
-public class CategoryActivity extends SherlockListActivity implements OnItemClickListener {
+public class CategoryActivity extends SherlockListActivity {
 
 	private Repository mRepository;
 	private CategoryAdapter mAdapter;
@@ -40,7 +40,7 @@ public class CategoryActivity extends SherlockListActivity implements OnItemClic
 		mAdapter.addAllAsync(mRepository.getCategories());
 		mListView = getListView();
 		mListView.setAdapter(mAdapter);
-		mListView.setOnItemClickListener(this);
+		mListView.setOnItemClickListener(mAdapter);
 	}
 
 	@Override
@@ -57,13 +57,7 @@ public class CategoryActivity extends SherlockListActivity implements OnItemClic
 		return true;
 	}
 
-	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		Intent intent = new Intent(this, NotificationActivity.class);
-		startActivity(intent);
-	}
-
-	private class CategoryAdapter extends AbsArrayAdapter<KCategoryModel> {
+	private class CategoryAdapter extends AbsArrayAdapter<KCategoryModel> implements OnItemClickListener {
 
 		public CategoryAdapter(Context context) {
 			super(context, R.layout.item_category);
@@ -75,6 +69,14 @@ public class CategoryActivity extends SherlockListActivity implements OnItemClic
 			CategoryItemView itemView = (CategoryItemView) getOrCreateView(convertView, parent);
 			itemView.setContent(categoryModel);
 			return itemView;
+		}
+		
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+			KCategoryModel categoryModel = getItem(position - 1);
+			Intent intent = new Intent(CategoryActivity.this, NotificationActivity.class);
+			intent.putExtra(NotificationActivity.EXTRA_TITLE, categoryModel.getTitle());
+			startActivity(intent);
 		}
 	}
 }

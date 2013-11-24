@@ -16,6 +16,7 @@ import com.eincs.android.kupid.KApplication;
 import com.eincs.android.kupid.R;
 import com.eincs.android.kupid.database.Repository;
 import com.eincs.android.kupid.model.KNotificationModel;
+import com.eincs.android.kupid.utils.Extras;
 import com.eincs.android.kupid.utils.FakeDelay;
 import com.eincs.android.kupid.widget.AbsArrayAdapter;
 import com.eincs.android.kupid.widget.NotificationItemView;
@@ -25,7 +26,8 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 public class NotificationActivity extends SherlockActivity implements
 		OnItemClickListener, OnRefreshListener<ListView> {
-
+	public static final String EXTRA_TITLE = "NotificationActivity.EXTRA_TITLE";
+	
 	private Repository mRepository;
 	private PullToRefreshListView mListView;
 	private NotificationAdapter mAdapter;
@@ -34,6 +36,8 @@ public class NotificationActivity extends SherlockActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_notification);
+		String activityTitle = Extras.getString(this, EXTRA_TITLE);
+		getSupportActionBar().setTitle(activityTitle);
 		mRepository = KApplication.getRepositoy();
 		mAdapter = new NotificationAdapter(this);
 		mAdapter.addAllAsync(mRepository.getNotifications(null));
