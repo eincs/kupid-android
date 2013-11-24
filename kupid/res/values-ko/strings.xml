@@ -9,6 +9,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="please_wait">잠시만 기다리세요#8230;</string>
     
+    <string name="yes">예</string>
+    <string name="no">아니오</string>
+    
     <string name="setting_alarm">알람</string>
     <string name="setting_sound">소리</string>
     <string name="setting_vibration">진동</string>
@@ -16,6 +19,11 @@
     <string name="setting_notice">공지사항</string>
     <string name="setting_schedule">학사일정</string>
     <string name="setting_logout">로그 아웃</string>
+    <string name="setting_logout_message">정말로 로그아웃 하시겠습니까?</string>
+    
+    <string name="setting_detail_title">세부 설정</string>
+    <string name="setting_filtering">필터링</string>
+    <string name="setting_advance">고급 설정</string>
     
     <string name="subject_hci">인간 컴퓨터 상호작용 입문</string>
     <string name="subject_probability">확률 및 통계학</string>

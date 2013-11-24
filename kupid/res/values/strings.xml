@@ -19,6 +19,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="please_wait">Please wait#8230;</string>
     
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    
     <string name="setting_alarm">Alarm</string>
     <string name="setting_sound">Sound</string>
     <string name="setting_vibration">Vibration</string>
@@ -26,6 +29,11 @@
     <string name="setting_notice">Notice</string>
     <string name="setting_schedule">College schedule</string>
     <string name="setting_logout">Log out</string>
+    <string name="setting_logout_message">Do you really want to log out?</string>
+    
+    <string name="setting_detail_title">Detail settings</string>
+    <string name="setting_filtering">Filtering</string>
+    <string name="setting_advance">Advanced settings</string>
     
     <string name="subject_hci">Human Computer Interaction</string>
     <string name="subject_probability">Probability and statistics</string>
