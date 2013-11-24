@@ -52,8 +52,8 @@ public class CategoryActivity extends SherlockListActivity implements OnItemClic
 	@Override
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 		// 이곳에서 SettingActivity를 호출하세요.
-		// Intent intent = new Intent(this, SettingActivity.class);
-		// startActivity(intent);
+		Intent intent = new Intent(this, SettingActivity.class);
+		startActivity(intent);
 		return true;
 	}
 
