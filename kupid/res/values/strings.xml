@@ -14,6 +14,8 @@
     <string name="tutorial_description4">Your Account information stores securly</string>
     <string name="tutorial_description5">Don\'t forget your assignment for your course</string>
     <string name="login_login">Log in</string>
+    <string name="login_hint_id">Your KUPID ID</string>
+    <string name="login_hint_pw">Your Password</string>
     <string name="hello_world">Hello world!</string>
     <string name="please_wait">Please wait#8230;</string>
     
