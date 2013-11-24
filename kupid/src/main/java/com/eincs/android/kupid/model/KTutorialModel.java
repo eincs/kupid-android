@@ -1,6 +1,6 @@
 package com.eincs.android.kupid.model;
 
-public class KCategoryModel implements IModel {
+public class KTutorialModel implements IModel {
 
 	private String title;
 	
