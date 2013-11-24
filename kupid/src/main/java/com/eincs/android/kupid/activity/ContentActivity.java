@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import butterknife.Views;
 
@@ -16,13 +17,20 @@ import com.eincs.android.kupid.KApplication;
 import com.eincs.android.kupid.R;
 import com.eincs.android.kupid.database.Repository;
 import com.eincs.android.kupid.model.KNotificationContentModel;
+import com.eincs.android.kupid.utils.FakeDelay;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 
-public class ContentActivity extends Activity implements FutureCallback<KNotificationContentModel>, OnClickListener {
+public class ContentActivity extends Activity implements
+		FutureCallback<KNotificationContentModel>, OnClickListener,
+		OnRefreshListener<ScrollView> {
 
 	private Repository mRepository;
 
+	private PullToRefreshScrollView mScroll;
 	private TextView mTitle;
 	private TextView mTime;
 	private TextView mTag1;
@@ -41,6 +49,8 @@ public class ContentActivity extends Activity implements FutureCallback<KNotific
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_content);
 		mRepository = KApplication.getRepositoy();
+		mScroll = (PullToRefreshScrollView) Views.findById(this, R.id.content_scroll);
+		mScroll.setOnRefreshListener(this);
 		mTitle = (TextView) Views.findById(this, R.id.content_title);
 		mTime = (TextView) Views.findById(this, R.id.content_time);
 		mTag1 = (TextView) Views.findById(this, R.id.content_tag1);
@@ -65,6 +75,16 @@ public class ContentActivity extends Activity implements FutureCallback<KNotific
 	protected void onResume() {
 		super.onResume();
 		Futures.addCallback(mRepository.getNotificationContent(null), this);
+	}
+
+	@Override
+	public void onRefresh(PullToRefreshBase<ScrollView> arg0) {
+		FakeDelay.executeWithDelay(new Runnable() {
+			@Override
+			public void run() {
+				mScroll.onRefreshComplete();
+			}
+		}, 1000);
 	}
 
 	@Override
