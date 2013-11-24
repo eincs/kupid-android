@@ -4,14 +4,20 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.eincs.android.kupid.KApplication;
 import com.eincs.android.kupid.R;
-import com.eincs.android.kupid.utils.FakeDelay;
+import com.eincs.android.kupid.database.Repository;
+import com.eincs.android.kupid.model.KCredentialModel;
+import com.eincs.android.kupid.utils.MoreFutures;
 
 public class LaunchActivity extends Activity {
 
+	private Repository mRepository;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		mRepository = KApplication.getRepositoy();
 		setContentView(R.layout.activity_launch);
 	}
 	
@@ -46,9 +52,13 @@ public class LaunchActivity extends Activity {
 	 * 적절한 카테고리 화면으로 보내던지 하면 된다.
 	 */
 	private void moveNext(Intent intent) {
-		FakeDelay.delay();
-		Intent nextIntent = new Intent(this, TutorialActivity.class);
-		startActivityForResult(nextIntent, 0);
+		KCredentialModel credentialModel = MoreFutures.get(mRepository.getCredential());
+		if (credentialModel != null) {
+			moveCategory(null);
+		} else {
+			Intent nextIntent = new Intent(this, TutorialActivity.class);
+			startActivityForResult(nextIntent, 0);
+		}
 	}
 	
 	/**

@@ -18,7 +18,15 @@ public final class FakeDelay {
 	public static void delay() {
 		delay(DEFAULT_DELAY_DURATION);
 	}
+	
+	public static void delayNetwork() {
+		delay(DEFAULT_DELAY_DURATION);
+	}
 
+	public static void delayDatabase() {
+		delay(DEFAULT_DELAY_DURATION);
+	}
+	
 	public static void delay(long durationMillis) {
 		delay(durationMillis, TimeUnit.MILLISECONDS);
 	}

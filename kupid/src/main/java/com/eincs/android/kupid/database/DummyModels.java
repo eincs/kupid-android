@@ -1,7 +1,6 @@
 package com.eincs.android.kupid.database;
 
 import java.util.List;
-import java.util.Map;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -11,13 +10,19 @@ import com.eincs.android.kupid.R;
 import com.eincs.android.kupid.model.KCategoryModel;
 import com.eincs.android.kupid.model.KNotificationModel;
 import com.eincs.android.kupid.model.KTutorialModel;
+import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
+import com.google.common.collect.Multimap;
 
 public final class DummyModels {
 	private DummyModels() {}
 	private static final Context CONTEXT = KApplication.getInstance();
 	private static final Resources RESOURCE = CONTEXT.getResources();
+	
+	public static final CredentialDatabase CREDENTIAL;
+	static {
+		CREDENTIAL = new CredentialDatabase(CONTEXT);
+	}
 	
 	public static final List<KTutorialModel> TUTORIALS;
 	static {
@@ -55,22 +60,24 @@ public final class DummyModels {
 		return result;
 	}
 	
-	public static final Map<String, List<KNotificationModel>> NOTIFICATIONS;
+	public static final Multimap<String, KNotificationModel> NOTIFICATIONS;
 	static {
-		NOTIFICATIONS = Maps.newHashMap();
+		NOTIFICATIONS = LinkedListMultimap.create();
 		for (KCategoryModel categoryModel : CATEGORIES) {
-			List<KNotificationModel> notifications = Lists.newArrayList();
 			int unreadCount = categoryModel.getUnreadCount();
+			String categoryId = categoryModel.getId();
 			for (int i = 0; i < 200; i++) {
 				boolean read = i < unreadCount ? true : false;
-				notifications.add(createNotification(read));
+				NOTIFICATIONS.put(categoryModel.getId(), createNotification(i, categoryId, read));
 			}
-			NOTIFICATIONS.put(categoryModel.getId(), notifications);
 		}
 	}
 	
-	public static KNotificationModel createNotification(boolean read) {
+	public static KNotificationModel createNotification(int id, String categoryId, boolean read) {
 		KNotificationModel result = new KNotificationModel();
+		result.setCategoryId(categoryId);
+		result.setNotificationId(String.format("%s_%s", categoryId, Integer.toString(id)));
+		result.setRead(read);
 		return result;
 	}
 }

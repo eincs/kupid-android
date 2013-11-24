@@ -1,5 +1,6 @@
 package com.eincs.android.kupid.database;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
 
@@ -11,6 +12,7 @@ import com.eincs.android.kupid.model.KNotificationContentModel;
 import com.eincs.android.kupid.model.KNotificationModel;
 import com.eincs.android.kupid.model.KTutorialModel;
 import com.eincs.android.kupid.utils.DefaultThreadPoolExecutor;
+import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.ListeningExecutorService;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -28,16 +30,17 @@ public class DummyRepository implements Repository {
 		return mExecutor.submit(new Callable<KCredentialModel>() {
 			@Override
 			public KCredentialModel call() throws Exception {
-				return null;
+				return DummyModels.CREDENTIAL.loadCredential();
 			}
 		});
 	}
 
 	@Override
-	public ListenableFuture<Void> setCredential(KCredentialModel credentialModel) {
+	public ListenableFuture<Void> setCredential(final KCredentialModel credentialModel) {
 		return mExecutor.submit(new Callable<Void>() {
 			@Override
 			public Void call() throws Exception {
+				DummyModels.CREDENTIAL.saveCredential(credentialModel);
 				return null;
 			}
 		});
@@ -48,7 +51,7 @@ public class DummyRepository implements Repository {
 		return mExecutor.submit(new Callable<List<KTutorialModel>>() {
 			@Override
 			public List<KTutorialModel> call() throws Exception {
-				return DummyModels.TUTORIALS;
+				return Collections.unmodifiableList(DummyModels.TUTORIALS);
 			}
 		});
 	}
@@ -58,7 +61,7 @@ public class DummyRepository implements Repository {
 		return mExecutor.submit(new Callable<List<KCategoryModel>>() {
 			@Override
 			public List<KCategoryModel> call() throws Exception {
-				return DummyModels.CATEGORIES;
+				return Collections.unmodifiableList(DummyModels.CATEGORIES);
 			}
 		});
 	}
@@ -68,7 +71,7 @@ public class DummyRepository implements Repository {
 		return mExecutor.submit(new Callable<List<KNotificationModel>>() {
 			@Override
 			public List<KNotificationModel> call() throws Exception {
-				return DummyModels.NOTIFICATIONS.get(categoryId);
+				return Lists.newArrayList(DummyModels.NOTIFICATIONS.get(categoryId));
 			}
 		});
 	}

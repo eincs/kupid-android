@@ -2,23 +2,13 @@ package com.eincs.android.kupid.model;
 
 public class KCredentialModel implements IModel {
 
-	public String id;
-	
-	public String password;
+	public String accessToken;
 
-	public String getId() {
-		return id;
+	public String getAccessToken() {
+		return accessToken;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
 	}
 }
