@@ -30,17 +30,18 @@ public final class DummyModels {
 	public static final List<KCategoryModel> CATEGORIES;
 	static {
 		CATEGORIES = Lists.newArrayList();
-		CATEGORIES.add(createCategory("공지사항", "공지사항"));
-		CATEGORIES.add(createCategory("학사일정", "2"));
-		CATEGORIES.add(createCategory("인간과 컴퓨터 상호작용 입문", "2"));
-		CATEGORIES.add(createCategory("확률 및 통계 입문", "2"));
-		CATEGORIES.add(createCategory("역사는 어떻게 서술 되는가?", "2"));
-		CATEGORIES.add(createCategory("외모와 인간행동", "2"));
-		CATEGORIES.add(createCategory("알고리즘", "2"));
-		CATEGORIES.add(createCategory("인터넷 프로토콜", "2"));
+		CATEGORIES.add(createCategory(R.string.setting_notice, R.string.setting_notice));
+		CATEGORIES.add(createCategory(R.string.setting_schedule, R.string.setting_schedule));
+		CATEGORIES.add(createCategory(R.string.subject_face_action, R.string.subject_face_action));
+		CATEGORIES.add(createCategory(R.string.subject_probability, R.string.subject_probability));
+		CATEGORIES.add(createCategory(R.string.subject_history, R.string.subject_history));
+		CATEGORIES.add(createCategory(R.string.subject_algorithm, R.string.subject_algorithm));
+		CATEGORIES.add(createCategory(R.string.subject_ip, R.string.subject_ip));
 	}
 	
-	public static KCategoryModel createCategory(String title, String description) {
+	public static KCategoryModel createCategory(int titleResId, int descriptionResId) {
+		String title = RESOURCE.getString(titleResId);
+		String description = RESOURCE.getString(descriptionResId);
 		KCategoryModel result = new KCategoryModel();
 		result.setTitle(title);
 		result.setDescription(description);
