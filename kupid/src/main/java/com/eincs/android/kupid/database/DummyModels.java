@@ -30,13 +30,14 @@ public final class DummyModels {
 	public static final List<KCategoryModel> CATEGORIES;
 	static {
 		CATEGORIES = Lists.newArrayList();
-		CATEGORIES.add(createCategory(R.string.setting_notice, R.string.setting_notice));
-		CATEGORIES.add(createCategory(R.string.setting_schedule, R.string.setting_schedule));
-		CATEGORIES.add(createCategory(R.string.subject_face_action, R.string.subject_face_action));
-		CATEGORIES.add(createCategory(R.string.subject_probability, R.string.subject_probability));
-		CATEGORIES.add(createCategory(R.string.subject_history, R.string.subject_history));
-		CATEGORIES.add(createCategory(R.string.subject_algorithm, R.string.subject_algorithm));
-		CATEGORIES.add(createCategory(R.string.subject_ip, R.string.subject_ip));
+		CATEGORIES.add(createCategory(R.string.setting_notice, R.string.setting_notice_desc));
+		CATEGORIES.add(createCategory(R.string.setting_schedule, R.string.setting_schedule_desc));
+		CATEGORIES.add(createCategory(R.string.subject_hci, R.string.subject_hci_desc));
+		CATEGORIES.add(createCategory(R.string.subject_face_action, R.string.subject_face_action_desc));
+		CATEGORIES.add(createCategory(R.string.subject_probability, R.string.subject_probability_desc));
+		CATEGORIES.add(createCategory(R.string.subject_history, R.string.subject_history_desc));
+		CATEGORIES.add(createCategory(R.string.subject_algorithm, R.string.subject_algorithm_desc));
+		CATEGORIES.add(createCategory(R.string.subject_ip, R.string.subject_ip_desc));
 	}
 	
 	public static KCategoryModel createCategory(int titleResId, int descriptionResId) {

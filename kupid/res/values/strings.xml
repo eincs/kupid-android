@@ -19,6 +19,16 @@
     <string name="hello_world">Hello world!</string>
     <string name="please_wait">Please wait#8230;</string>
     
+    <string name="setting_notice_desc">Notice on KUPID</string>
+    <string name="setting_schedule_desc">College schedule for Korea University Students</string>
+    
+    <string name="subject_hci_desc">CNCE402 화(2) 교양관 606 목(2) 교양관 606</string>
+    <string name="subject_probability_desc">Probability and statistics</string>
+    <string name="subject_history_desc">How history descripted</string>
+    <string name="subject_face_action_desc">Human face and action</string>
+    <string name="subject_algorithm_desc">Algorithm</string>
+    <string name="subject_ip_desc">Internet Protocol</string>
+    
     <string name="setting_alarm">Alarm</string>
     <string name="setting_sound">Sound</string>
     <string name="setting_vibration">Vibration</string>
@@ -33,4 +43,5 @@
     <string name="subject_face_action">Human face and action</string>
     <string name="subject_algorithm">Algorithm</string>
     <string name="subject_ip">Internet Protocol</string>
+    
 </resources>
