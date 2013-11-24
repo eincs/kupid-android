@@ -3,6 +3,8 @@ package com.eincs.android.kupid.database;
 import java.util.List;
 import java.util.concurrent.Callable;
 
+import com.eincs.android.kupid.event.KEventBus;
+import com.eincs.android.kupid.event.KModelChangedEvent;
 import com.eincs.android.kupid.model.KCategoryModel;
 import com.eincs.android.kupid.model.KCredentialModel;
 import com.eincs.android.kupid.model.KNotificationContentModel;
@@ -13,7 +15,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.ListeningExecutorService;
 import com.google.common.util.concurrent.MoreExecutors;
 
-public class DummyRepository implements Repository{
+public class DummyRepository implements Repository {
 	
 	private final ListeningExecutorService mExecutor;
 			
@@ -72,6 +74,32 @@ public class DummyRepository implements Repository{
 	}
 
 	@Override
+	public ListenableFuture<Void> readAllNotification(final String categoryId) {
+		return mExecutor.submit(new Callable<Void>() {
+			@Override
+			public Void call() throws Exception {
+				for (KCategoryModel category : DummyModels.CATEGORIES) {
+					if (category.getId().equals(categoryId)) {
+						category.setUnreadCount(0);
+					}
+				}
+				notifyChanges(KCategoryModel.class);
+				return null;
+			}
+		});
+	}
+
+	@Override
+	public ListenableFuture<Void> readNotification(String notificationId) {
+		return mExecutor.submit(new Callable<Void>() {
+			@Override
+			public Void call() throws Exception {
+				return null;
+			}
+		});
+	}
+
+	@Override
 	public ListenableFuture<KNotificationContentModel> getNotificationContent(String notificationId) {
 		return mExecutor.submit(new Callable<KNotificationContentModel>() {
 			@Override
@@ -79,5 +107,9 @@ public class DummyRepository implements Repository{
 				return null;
 			}
 		});
+	}
+	
+	private void notifyChanges(Class<?> type) {
+		KEventBus.getDefaultEventBus().postSticky(new KModelChangedEvent(type));
 	}
 }

@@ -8,8 +8,10 @@ import android.widget.TextView;
 
 import com.eincs.android.kupid.R;
 import com.eincs.android.kupid.model.KCategoryModel;
+import com.google.common.base.Strings;
 
 public class CategoryItemView extends RelativeLayout {
+	private TextView mHeader;
 	private TextView mText1;
 	private TextView mText2;
 	private TextView mBadge;
@@ -29,6 +31,7 @@ public class CategoryItemView extends RelativeLayout {
 	@Override
 	protected void onFinishInflate() {
 		super.onFinishInflate();
+		mHeader = (TextView) findViewById(R.id.item_category_header);
 		mText1 = (TextView) findViewById(R.id.item_category_text1);
 		mText2 = (TextView) findViewById(R.id.item_category_text2);
 		mBadge = (TextView) findViewById(R.id.item_category_badge);
@@ -39,6 +42,13 @@ public class CategoryItemView extends RelativeLayout {
 	 * @param categoryModel 뷰의 데이터를 가지고 있는 {@link KCategoryModel} 인스턴스
 	 */
 	public void setContent(KCategoryModel categoryModel) {
+		String header = categoryModel.getHeader();
+		if (!Strings.isNullOrEmpty(header)) {
+			mHeader.setVisibility(View.VISIBLE);
+			mHeader.setText(header);
+		} else {
+			mHeader.setVisibility(View.GONE);
+		}
 		mText1.setText(categoryModel.getTitle());
 		mText2.setText(categoryModel.getDescription());
 		int unreadCount = categoryModel.getUnreadCount();
@@ -46,6 +56,14 @@ public class CategoryItemView extends RelativeLayout {
 		mBadge.setText(Integer.toString(unreadCount));
 	}
 	
+	public TextView getmHeader() {
+		return mHeader;
+	}
+
+	public TextView getmBadge() {
+		return mBadge;
+	}
+
 	public TextView getmText1() {
 		return mText1;
 	}

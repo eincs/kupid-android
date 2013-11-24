@@ -1,44 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.eincs.android.kupid.widget.CategoryItemView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingBottom="10dp"
-    android:paddingLeft="15dp"
-    android:paddingRight="15dp"
-    android:paddingTop="10dp" >
+    android:layout_height="wrap_content" >
 
     <TextView
-        android:id="@+id/item_category_text1"
+        android:id="@+id/item_category_header"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp"
         android:text="@string/subject_algorithm"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/item_category_text2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/item_category_text1"
-        android:layout_below="@id/item_category_text1"
-        android:text="@string/subject_algorithm_desc"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/item_category_badge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/badge"
-        android:gravity="center"
-        android:minHeight="25dp"
-        android:minWidth="25dp"
-        android:paddingBottom="3dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:paddingTop="3dp"
-        android:textAlignment="center"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="15sp"
         android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_category_header"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp" >
+
+        <TextView
+            android:id="@+id/item_category_text1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/subject_algorithm"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/item_category_text2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/item_category_text1"
+            android:layout_below="@id/item_category_text1"
+            android:text="@string/subject_algorithm_desc"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/item_category_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/badge"
+            android:gravity="center"
+            android:minHeight="25dp"
+            android:minWidth="25dp"
+            android:paddingBottom="3dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="3dp"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
 </com.eincs.android.kupid.widget.CategoryItemView>

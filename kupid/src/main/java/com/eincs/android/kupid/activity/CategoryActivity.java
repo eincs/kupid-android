@@ -7,14 +7,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
 
 import com.actionbarsherlock.app.SherlockListActivity;
 import com.actionbarsherlock.view.Menu;
 import com.eincs.android.kupid.KApplication;
 import com.eincs.android.kupid.R;
 import com.eincs.android.kupid.database.Repository;
+import com.eincs.android.kupid.event.KEventBus;
+import com.eincs.android.kupid.event.KModelChangedEvent;
 import com.eincs.android.kupid.model.KCategoryModel;
 import com.eincs.android.kupid.widget.AbsArrayAdapter;
 import com.eincs.android.kupid.widget.CategoryItemView;
@@ -50,8 +52,24 @@ public class CategoryActivity extends SherlockListActivity {
 	}
 	
 	@Override
+	protected void onResume() {
+		super.onResume();
+		mAdapter.addAllAsync(mRepository.getCategories());
+		KEventBus.getDefaultEventBus().register(this);
+	}
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		KEventBus.getDefaultEventBus().unregister(this);
+	}
+	
+	public void onEventMainThread(KModelChangedEvent event) {
+		mAdapter.addAllAsync(mRepository.getCategories());
+	}
+	
+	@Override
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
-		// 이곳에서 SettingActivity를 호출하세요.
 		Intent intent = new Intent(this, SettingActivity.class);
 		startActivity(intent);
 		return true;
@@ -76,6 +94,7 @@ public class CategoryActivity extends SherlockListActivity {
 			KCategoryModel categoryModel = getItem(position - 1);
 			Intent intent = new Intent(CategoryActivity.this, NotificationActivity.class);
 			intent.putExtra(NotificationActivity.EXTRA_TITLE, categoryModel.getTitle());
+			intent.putExtra(NotificationActivity.EXTRA_CATEGORY_ID, categoryModel.getId());
 			startActivity(intent);
 		}
 	}

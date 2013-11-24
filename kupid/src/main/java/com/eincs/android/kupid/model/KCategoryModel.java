@@ -1,8 +1,10 @@
 package com.eincs.android.kupid.model;
 
 public class KCategoryModel implements IModel {
-
+	
 	private String id;
+	
+	private String header;
 
 	private String title;
 	
@@ -16,6 +18,15 @@ public class KCategoryModel implements IModel {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getHeader() {
+		return header;
+	}
+
+	public KCategoryModel setHeader(String header) {
+		this.header = header;
+		return this;
 	}
 
 	public String getTitle() {
@@ -41,5 +52,7 @@ public class KCategoryModel implements IModel {
 	public void setUnreadCount(Integer unreadCount) {
 		this.unreadCount = unreadCount;
 	}
+
+	
 	
 }

@@ -29,21 +29,24 @@ public final class DummyModels {
 	
 	public static final List<KCategoryModel> CATEGORIES;
 	static {
+		String headerCommon = RESOURCE.getString(R.string.category_header_common);
+		String headerSubject = RESOURCE.getString(R.string.category_header_subject);
 		CATEGORIES = Lists.newArrayList();
-		CATEGORIES.add(createCategory(R.string.setting_notice, R.string.setting_notice_desc, 2));
-		CATEGORIES.add(createCategory(R.string.setting_schedule, R.string.setting_schedule_desc, 0));
-		CATEGORIES.add(createCategory(R.string.subject_hci, R.string.subject_hci_desc, 1));
-		CATEGORIES.add(createCategory(R.string.subject_face_action, R.string.subject_face_action_desc, 0));
-		CATEGORIES.add(createCategory(R.string.subject_probability, R.string.subject_probability_desc, 0));
-		CATEGORIES.add(createCategory(R.string.subject_history, R.string.subject_history_desc, 0));
-		CATEGORIES.add(createCategory(R.string.subject_algorithm, R.string.subject_algorithm_desc, 0));
-		CATEGORIES.add(createCategory(R.string.subject_ip, R.string.subject_ip_desc, 123));
+		CATEGORIES.add(newCategory(0, R.string.setting_notice, R.string.setting_notice_desc, 2).setHeader(headerCommon));
+		CATEGORIES.add(newCategory(1, R.string.setting_schedule, R.string.setting_schedule_desc, 0));
+		CATEGORIES.add(newCategory(3, R.string.subject_hci, R.string.subject_hci_desc, 1).setHeader(headerSubject));
+		CATEGORIES.add(newCategory(4, R.string.subject_face_action, R.string.subject_face_action_desc, 0));
+		CATEGORIES.add(newCategory(5, R.string.subject_probability, R.string.subject_probability_desc, 0));
+		CATEGORIES.add(newCategory(6, R.string.subject_history, R.string.subject_history_desc, 0));
+		CATEGORIES.add(newCategory(7, R.string.subject_algorithm, R.string.subject_algorithm_desc, 0));
+		CATEGORIES.add(newCategory(8, R.string.subject_ip, R.string.subject_ip_desc, 123));
 	}
 	
-	public static KCategoryModel createCategory(int titleResId, int descriptionResId, int unradCount) {
+	public static KCategoryModel newCategory(int id, int titleResId, int descriptionResId, int unradCount) {
 		String title = RESOURCE.getString(titleResId);
 		String description = RESOURCE.getString(descriptionResId);
 		KCategoryModel result = new KCategoryModel();
+		result.setId(Integer.toString(id));
 		result.setTitle(title);
 		result.setDescription(description);
 		result.setUnreadCount(unradCount);
