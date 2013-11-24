@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -12,6 +13,8 @@ import android.widget.ListView;
 import com.actionbarsherlock.app.SherlockListActivity;
 import com.actionbarsherlock.view.Menu;
 import com.eincs.android.kupid.R;
+import com.eincs.android.kupid.widget.AbsArrayAdapter;
+import com.eincs.android.kupid.widget.NotificationItemView;
 import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
 
 public class CategoryActivity extends SherlockListActivity implements OnItemClickListener {
@@ -58,11 +61,17 @@ public class CategoryActivity extends SherlockListActivity implements OnItemClic
 		startActivity(intent);
 	}
 
-	private class CategoryAdapter extends ArrayAdapter<String> {
+	private class CategoryAdapter extends AbsArrayAdapter<String> {
 
 		public CategoryAdapter(Context context) {
-			super(context, android.R.layout.simple_list_item_1);
+			super(context, R.layout.item_category);
 			addAll(VALUES);
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			NotificationItemView itemView = (NotificationItemView) getOrCreateView(convertView, parent);
+			return itemView;
 		}
 
 	}

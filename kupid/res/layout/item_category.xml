@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.eincs.android.kupid.widget.NotificationItemView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="10dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp" >
+
+        <TextView
+            android:id="@+id/item_category_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Something Important!"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_category_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/item_category_title"
+            android:layout_alignParentRight="true"
+            android:text="오전 12:10" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/item_category_content1"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_toLeftOf="@+id/item_category_star"
+            android:ellipsize="end"
+            android:gravity="bottom"
+            android:lines="1"
+            android:paddingBottom="5dp"
+            android:text="오늘 과제는 정말 무엇을 하는가를 결정하는 문제 였습니다"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/item_category_tags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_category_content1"
+            android:layout_toLeftOf="@id/item_category_star"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/item_category_tag1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:background="@android:color/darker_gray"
+                android:lines="1"
+                android:padding="2dp"
+                android:text="공지사항"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/item_category_tag2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:background="@android:color/darker_gray"
+                android:lines="1"
+                android:padding="2dp"
+                android:text="11/23까지"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/item_category_tag3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:background="@android:color/darker_gray"
+                android:lines="1"
+                android:padding="2dp"
+                android:text="올린사람"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_category_content2"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_alignBaseline="@id/item_category_tags"
+            android:layout_below="@id/item_category_content1"
+            android:layout_toLeftOf="@id/item_category_tags"
+            android:ellipsize="end"
+            android:gravity="bottom"
+            android:lines="1"
+            android:paddingBottom="5dp"
+            android:text="오늘 과제는 정말 무엇을 하는가를 결정하는 문제 였습니다"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/item_category_star"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@id/item_category_tags"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:drawable/star_off" />
+    </RelativeLayout>
+
+</com.eincs.android.kupid.widget.NotificationItemView>
