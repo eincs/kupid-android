@@ -1,14 +1,27 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tutorial_background"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-    
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_tutorial_1" >
+
     <TextView
         android:id="@+id/tutorial_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="100sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="150dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:shadowColor="#555555"
+        android:shadowDx="5.0"
+        android:shadowDy="5.0"
+        android:shadowRadius="3.0"
+        android:text="blahblah"
         android:textAlignment="center"
-        android:layout_centerInParent="true" />
+        android:textColor="@android:color/white"
+        android:textSize="30sp" />
 
 </RelativeLayout>

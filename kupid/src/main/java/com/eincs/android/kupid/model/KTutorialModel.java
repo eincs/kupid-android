@@ -2,34 +2,29 @@ package com.eincs.android.kupid.model;
 
 public class KTutorialModel implements IModel {
 
-	private String title;
+	private int description;
 	
-	private String description;
+	private int background;
+
+	public KTutorialModel(int description, int background) {
+		this.description = description;
+		this.background = background;
+	}
 	
-	private Integer unreadCount;
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getDescription() {
+	public int getDescription() {
 		return description;
 	}
 
-	public void setDescription(String description) {
+	public void setDescription(int description) {
 		this.description = description;
 	}
 
-	public Integer getUnreadCount() {
-		return unreadCount;
+	public int getBackground() {
+		return background;
 	}
 
-	public void setUnreadCount(Integer unreadCount) {
-		this.unreadCount = unreadCount;
+	public void setBackground(int background) {
+		this.background = background;
 	}
 	
 }

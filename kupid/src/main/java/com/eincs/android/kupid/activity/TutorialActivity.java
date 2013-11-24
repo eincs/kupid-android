@@ -1,5 +1,7 @@
 package com.eincs.android.kupid.activity;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +15,8 @@ import android.widget.Button;
 import butterknife.Views;
 
 import com.eincs.android.kupid.R;
+import com.eincs.android.kupid.database.DummyModels;
+import com.eincs.android.kupid.model.KTutorialModel;
 import com.viewpagerindicator.CirclePageIndicator;
 
 public class TutorialActivity extends FragmentActivity implements OnClickListener {
@@ -53,15 +57,18 @@ public class TutorialActivity extends FragmentActivity implements OnClickListene
 	}
 	
 	private class TutorialAdapter extends FragmentPagerAdapter {
-
+		private List<KTutorialModel> mTutorialModels = DummyModels.TUTORIALS;
+		
 		public TutorialAdapter() {
 			super(getSupportFragmentManager());
 		}
 
 		@Override
 		public Fragment getItem(int position) {
+			KTutorialModel tutorialModel = mTutorialModels.get(position);
 			Bundle arguments = new Bundle();
-			arguments.putString(TutorialContentFragment.ARG_CONTENT, String.valueOf(position));
+			arguments.putInt(TutorialContentFragment.ARG_CONTENT, tutorialModel.getDescription());
+			arguments.putInt(TutorialContentFragment.ARG_BACKGROUND, tutorialModel.getBackground());
 			Fragment fragment = new TutorialContentFragment();
 			fragment.setArguments(arguments);
 			return fragment;
@@ -69,7 +76,7 @@ public class TutorialActivity extends FragmentActivity implements OnClickListene
 
 		@Override
 		public int getCount() {
-			return 5;
+			return mTutorialModels.size();
 		}
 		
 	}
