@@ -37,17 +37,12 @@ public class CategoryActivity extends SherlockListActivity implements OnItemClic
 		helper.initActionBar(this);
 		mRepository = KApplication.getRepositoy();
 		mAdapter = new CategoryAdapter(this);
+		mAdapter.addAllAsync(mRepository.getCategories());
 		mListView = getListView();
 		mListView.setAdapter(mAdapter);
 		mListView.setOnItemClickListener(this);
 	}
 
-	@Override
-	protected void onResume() {
-		super.onResume();
-		mAdapter.addAllAsync(mRepository.getCategories());
-	}
-	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getSupportMenuInflater().inflate(R.menu.category, menu);
