@@ -1,24 +1,41 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <style name="AppTheme" parent="Theme.Sherlock.Light.DarkActionBar">
+    <style name="KAppTheme" parent="Theme.Sherlock.Light">
         <item name="android:actionBarStyle">@style/Widget.ActionBar</item>
-        <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>
-        <item name="android:listSelector">@drawable/activated_background</item>
         <item name="actionBarStyle">@style/Widget.ActionBar</item>
+        <item name="android:titleTextStyle">@style/KAppTheme.ActionBar.TitleTextStyle</item>
+        <item name="android:actionMenuTextColor">@android:color/white</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
     </style>
 
-    <style name="AppTheme.TranslucentActionBar">
+    <style name="KAppTheme.NoActionBar" parent="Theme.Sherlock.Light.NoActionBar">
+        <item name="android:actionBarStyle">@style/Widget.ActionBar</item>
+        <item name="actionBarStyle">@style/Widget.ActionBar</item>
+        <item name="android:titleTextStyle">@style/KAppTheme.ActionBar.TitleTextStyle</item>
+        <item name="android:actionMenuTextColor">@android:color/white</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+    </style>
+
+    <style name="KAppTheme.TranslucentActionBar" parent="Theme.Sherlock.Light">
         <item name="android:actionBarStyle">@style/Widget.ActionBar.Transparent</item>
         <item name="android:windowActionBarOverlay">true</item>
         <item name="actionBarStyle">@style/Widget.ActionBar.Transparent</item>
         <item name="windowActionBarOverlay">true</item>
+        <item name="android:titleTextStyle">@style/KAppTheme.ActionBar.TitleTextStyle</item>
+        <item name="android:actionMenuTextColor">@android:color/white</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
     </style>
 
-    <style name="AppTheme.Light.TranslucentActionBar" parent="Theme.Sherlock.Light">
+    <style name="KAppTheme.Light.TranslucentActionBar" parent="Theme.Sherlock.Light">
         <item name="android:actionBarStyle">@style/Widget.Light.ActionBar.Transparent</item>
         <item name="android:windowActionBarOverlay">true</item>
         <item name="actionBarStyle">@style/Widget.Light.ActionBar.Transparent</item>
         <item name="windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="KAppTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>
