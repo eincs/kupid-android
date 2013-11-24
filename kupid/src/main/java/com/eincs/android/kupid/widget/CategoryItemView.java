@@ -2,21 +2,15 @@ package com.eincs.android.kupid.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.eincs.android.kupid.R;
+import com.eincs.android.kupid.model.KCategoryModel;
 
 public class CategoryItemView extends RelativeLayout{
-	private TextView mTitle;
-	private TextView mTime;
-	private TextView mContent1;
-	private TextView mContent2;
-	private ImageView mStar;
-	private TextView mTag1;
-	private TextView mTag2;
-	private TextView mTag3;
+	private TextView mText1;
+	private TextView mText2;
 	
 	public CategoryItemView(Context context) {
 		this(context, null);
@@ -33,13 +27,24 @@ public class CategoryItemView extends RelativeLayout{
 	@Override
 	protected void onFinishInflate() {
 		super.onFinishInflate();
-		mTitle = (TextView) findViewById(R.id.item_category_title);
-		mTime = (TextView) findViewById(R.id.item_category_time);
-		mContent1 = (TextView) findViewById(R.id.item_category_content1);
-		mContent2 = (TextView) findViewById(R.id.item_category_content2);
-		mStar = (ImageView) findViewById(R.id.item_category_star);
-		mTag1 = (TextView) findViewById(R.id.item_category_tag1);
-		mTag2 = (TextView) findViewById(R.id.item_category_tag2);
-		mTag3 = (TextView) findViewById(R.id.item_category_tag3);
+		mText1 = (TextView) findViewById(R.id.item_category_text1);
+		mText2 = (TextView) findViewById(R.id.item_category_text2);
 	}
+
+	/**
+	 * 주어진 {@link KCategoryModel}의 데이터를 바탕으로 뷰의 내용을 채워넣는다.
+	 * @param categoryModel 뷰의 데이터를 가지고 있는 {@link KCategoryModel} 인스턴스
+	 */
+	public void setContent(KCategoryModel categoryModel) {
+		// TODO: 이곳에서 데이터를 채워넣는다.
+	}
+	
+	public TextView getmText1() {
+		return mText1;
+	}
+
+	public TextView getmText2() {
+		return mText2;
+	}
+	
 }
