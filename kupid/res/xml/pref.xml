@@ -14,28 +14,35 @@
             android:key="settingVibration"
             android:title="@string/setting_vibration"/>
     </PreferenceCategory>
-
+    
     <PreferenceCategory android:title="@string/setting_detail">
-        <CheckBoxPreference
-            android:defaultValue="true"
+        <com.eincs.android.kupid.activity.CheckBoxAndSettingsPreference
+            android:title="@string/setting_notice"
+            android:summary="summary"
             android:key="settingNotice"
-            android:title="@string/setting_notice"/>
-        <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="true">
+        </com.eincs.android.kupid.activity.CheckBoxAndSettingsPreference>
+        <com.eincs.android.kupid.activity.CheckBoxAndSettingsPreference
+            android:title="@string/setting_schedule"
+            android:summary="summary"
             android:key="settingSchedule"
-            android:title="@string/setting_schedule"/>
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="settingSubject1"
-            android:title="@string/subject_hci"/>
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="settingSubject2"
-            android:title="@string/subject_probability"/>
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="settingSubject3"
-            android:title="@string/subject_history"/>
+            android:defaultValue="true">
+        </com.eincs.android.kupid.activity.CheckBoxAndSettingsPreference>
+        <com.eincs.android.kupid.activity.CheckBoxAndSettingsPreference
+            android:title="@string/subject_hci"
+            android:summary="summary"
+            android:key="settingSubject1">
+        </com.eincs.android.kupid.activity.CheckBoxAndSettingsPreference>
+        <com.eincs.android.kupid.activity.CheckBoxAndSettingsPreference
+            android:title="@string/subject_probability"
+            android:summary="summary"
+            android:key="settingSubject2">
+        </com.eincs.android.kupid.activity.CheckBoxAndSettingsPreference>
+        <com.eincs.android.kupid.activity.CheckBoxAndSettingsPreference
+            android:title="@string/subject_history"
+            android:summary="summary"
+            android:key="settingSubject3">
+        </com.eincs.android.kupid.activity.CheckBoxAndSettingsPreference>
     </PreferenceCategory>
     
     <PreferenceCategory android:title="@string/setting_logout" >
