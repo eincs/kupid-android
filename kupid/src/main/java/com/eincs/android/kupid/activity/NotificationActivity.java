@@ -45,7 +45,8 @@ public class NotificationActivity extends SherlockActivity implements
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		return super.onCreateOptionsMenu(menu);
+		getSupportMenuInflater().inflate(R.menu.notification, menu);
+		return true;
 	}
 
 	@Override
