@@ -7,6 +7,9 @@
     <com.handmark.pulltorefresh.library.PullToRefreshListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:choiceMode="singleChoice"
+        android:listSelector="@drawable/activated_background"
+        android:state_activated="true" />
 
 </RelativeLayout>

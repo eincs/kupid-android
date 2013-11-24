@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="crimson">#7c001a</color>
+    
+    <color name="uva_color">#887c001a</color>
+    <color name="default_color">#fff</color>
 </resources>
