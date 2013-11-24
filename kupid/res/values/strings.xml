@@ -8,5 +8,11 @@
     <string name="login_login">Log in</string>
     <string name="hello_world">Hello world!</string>
     <string name="please_wait">Please wait#8230;</string>
+    
+    <string name="setting_alarm">Alarm</string>
+    <string name="setting_sound">Sound</string>
+    <string name="setting_vibration">Vibration</string>
+    <string name="setting_notice">Notice</string>
+    <string name="setting_schedule">College schedule</string>
 
 </resources>
