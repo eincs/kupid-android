@@ -1,4 +1,4 @@
-package com.eincs.android.kupid.activity;
+package com.eincs.android.kupid.widget;
 
 import android.app.Dialog;
 

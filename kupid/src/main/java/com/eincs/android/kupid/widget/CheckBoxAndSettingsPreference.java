@@ -1,6 +1,7 @@
-package com.eincs.android.kupid.activity;
+package com.eincs.android.kupid.widget;
 
 import com.eincs.android.kupid.R;
+import com.eincs.android.kupid.activity.SettingsPreferenceFragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -48,7 +49,8 @@ public class CheckBoxAndSettingsPreference extends CheckBoxPreference {
                         onSettingsButtonClicked();
                     }
                 });
-        enableSettingsButton();
+        mSettingsButton.setVisibility(View.VISIBLE);
+//        enableSettingsButton();
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.eincs.android.kupid.activity;
 
 import com.eincs.android.kupid.R;
+import com.eincs.android.kupid.widget.DialogCreatable;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
