@@ -1,6 +1,7 @@
 package com.eincs.android.kupid.widget;
 
 import com.eincs.android.kupid.R;
+import com.eincs.android.kupid.activity.SettingDetailActivity;
 import com.eincs.android.kupid.activity.SettingsPreferenceFragment;
 
 import android.content.Context;
@@ -20,9 +21,11 @@ public class CheckBoxAndSettingsPreference extends CheckBoxPreference {
     private TextView mSummaryText;
     private ImageView mSettingsButton;
     private Intent mSettingsIntent;
+    private Context mContext;
 
     public CheckBoxAndSettingsPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
+        mContext = context;
         setLayoutResource(R.layout.preference_inputmethod);
         setWidgetLayoutResource(R.layout.preference_inputmethod_widget);
     }
@@ -47,6 +50,8 @@ public class CheckBoxAndSettingsPreference extends CheckBoxPreference {
                     @Override
                     public void onClick(View clickedView) {
                         onSettingsButtonClicked();
+                        Intent intent = new Intent(mContext, SettingDetailActivity.class);
+                        mContext.startActivity(intent);
                     }
                 });
         mSettingsButton.setVisibility(View.VISIBLE);

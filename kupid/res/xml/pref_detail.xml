@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/setting_detail_title" >
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="detailSound"
+            android:title="@string/setting_sound"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="detailVibration"
+            android:title="@string/setting_vibration"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="detailFiltering"
+            android:title="@string/setting_filtering"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="detailAdvanced"
+            android:title="@string/setting_advance"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

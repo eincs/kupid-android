@@ -61,6 +61,8 @@
 		<activity android:name=".activity.NotificationActivity" android:screenOrientation="portrait"></activity>
 		<activity android:name=".activity.ContentActivity" android:screenOrientation="portrait"></activity>
 		<activity android:name=".activity.SettingActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name=".activity.SettingDetailActivity" android:screenOrientation="portrait"></activity>
+		
     </application>
 
 </manifest>
