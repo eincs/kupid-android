@@ -16,48 +16,38 @@
     <string name="login_login">Log in</string>
     <string name="login_hint_id">Your KUPID ID</string>
     <string name="login_hint_pw">Your Password</string>
-    <string name="hello_world">Hello world!</string>
     <string name="please_wait">Please wait&#8230;</string>
-    
     <string name="exception_msg_no_such_user">Please type id and password</string>
     <string name="exception_msg_invalid_password">Please type id and password</string>
-    
     <string name="dialog_messagae_read_all_title">Read all notification?</string>
     <string name="dialog_messagae_read_all_message">Do you want to mark all notificaions to read of this category?</string>
-    
     <string name="category_header_common">Common Notification</string>
     <string name="category_header_subject">Subject Notification</string>
-    
     <string name="setting_notice_desc">Notice on KUPID</string>
     <string name="setting_schedule_desc">College schedule for Korea University Students</string>
-    
     <string name="subject_hci_desc">CNCE402 화(2) 교양관 606 목(2) 교양관 606</string>
     <string name="subject_probability_desc">Probability and statistics</string>
     <string name="subject_history_desc">How history descripted</string>
     <string name="subject_face_action_desc">Human face and action</string>
     <string name="subject_algorithm_desc">Algorithm</string>
     <string name="subject_ip_desc">Internet Protocol</string>
-    
     <string name="setting_alarm">Alarm</string>
     <string name="setting_sound">Sound</string>
     <string name="setting_vibration">Vibration</string>
     <string name="setting_detail">Detail</string>
     <string name="setting_notice">Notice</string>
     <string name="setting_schedule">College schedule</string>
-    
     <string name="setting_account">Account</string>
     <string name="setting_logout">Log out</string>
     <string name="setting_logout_message">Do you really want to log out?</string>
-    
     <string name="setting_detail_title">Detail settings</string>
     <string name="setting_filtering">Filtering</string>
     <string name="setting_advance">Advanced settings</string>
-    
     <string name="subject_hci">Human Computer Interaction</string>
     <string name="subject_probability">Probability and statistics</string>
     <string name="subject_history">How history descripted</string>
     <string name="subject_face_action">Human face and action</string>
     <string name="subject_algorithm">Algorithm</string>
     <string name="subject_ip">Internet Protocol</string>
-    
+
 </resources>

@@ -2,30 +2,53 @@
 <resources>
 
     <string name="app_name">KUPID 알림</string>
-    <string name="action_settings">Settings</string>
-    <string name="action_read_all">Mark all as read</string>
-    <string name="tutorial_login">Log in</string>
-    <string name="login_login">Log in</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">세팅</string>
+    <string name="action_export_calendar">일정 추가하기</string>
+    <string name="action_export_text">공유하기</string>
+    <string name="action_view_original">원본보기</string>
+    <string name="action_read_all">모두 읽음</string>
+    <string name="tutorial_login">로그인</string>
+    <string name="tutorial_description1">새로운 KUPID 알림을 푸시를 통해 바로바로 받아보세요!</string>
+    <string name="tutorial_description2">간단한 단계를 통해 빠르게 알림을 확인하세요!</string>
+    <string name="tutorial_description3">알림을 확인하기 위해 매번 로그인하지 않아도 됩니다!</string>
+    <string name="tutorial_description4">사용자의 계정 정보는 안전하게 보관, 전송 됩니다.</string>
+    <string name="tutorial_description5">이 앱을 통해 이제 과제를 까먹고 못하게 되는 일은 없습니다!</string>
+    <string name="login_login">로그인</string>
+    <string name="login_hint_id">KUPID 아이디</string>
+    <string name="login_hint_pw">KUPID 비밀번호</string>
     <string name="please_wait">잠시만 기다리세요&#8230;</string>
-    
+    <string name="exception_msg_no_such_user">이이디와 비밀번호 모두 입력해주세요</string>
+    <string name="exception_msg_invalid_password">이이디와 비밀번호 모두 입력해주세요</string>
+    <string name="dialog_messagae_read_all_title">모든 알림을 읽음 표시</string>
+    <string name="dialog_messagae_read_all_message">이 카테고리의 모든 알림을 읽음으로 표시하시겠습니까?</string>
+    <string name="category_header_common">공통 알림</string>
+    <string name="category_header_subject">과목별 알림</string>
+    <string name="subject_notice_desc">KUPID의 새로운 공지사항</string>
+    <string name="subject_schedule_desc">새로 공지된 학사 일정</string>
+    <string name="subject_hci_desc">CNCE402 화(2) 교양관 606 목(2) 교양관 606</string>
+    <string name="subject_probability_desc">CNCE402 화(2) 교양관 606 목(2) 정통관 606</string>
+    <string name="subject_history_desc">CNCE402 화(2) 교양관 606 목(2) 교양관 606</string>
+    <string name="subject_face_action_desc">CNCE402 화(2) 교양관 606 목(2) 교양관 606</string>
+    <string name="subject_algorithm_desc">CNCE402 화(2) 교양관 606 목(2) 정통관 606</string>
+    <string name="subject_ip_desc">CNCE402 화(2) 교양관 606 목(2) 정통관 606</string>
     <string name="setting_alarm">알람</string>
-    <string name="setting_sound">소리</string>
-    <string name="setting_vibration">진동</string>
-    <string name="setting_detail">세부사항</string>
+    <string name="setting_sound">알림음</string>
+    <string name="setting_vibration">알림 진동</string>
+    <string name="setting_detail">세부 설정</string>
     <string name="setting_notice">공지사항</string>
-    <string name="setting_schedule">학사일정</string>
-    <string name="setting_logout">로그 아웃</string>
-    <string name="setting_logout_message">정말로 로그아웃 하시겠습니까?</string>
-    
+    <string name="setting_schedule">학사 일정</string>
+    <string name="setting_account">계정 설정</string>
+    <string name="setting_logout">로그아웃</string>
+    <string name="setting_logout_message">정말로 앱에서 로그아웃 하시겠습니까? 읽음 정보 등은 모두 사라집니다.</string>
     <string name="setting_detail_title">세부 설정</string>
     <string name="setting_filtering">필터링</string>
     <string name="setting_advance">고급 설정</string>
-    
+    <string name="setting_notice_desc">KUPID의 공지사항에 대한 알림 세부 설정</string>
+    <string name="setting_schedule_desc">학사 일정에 대한 알림 세부 설정</string>
     <string name="subject_hci">인간 컴퓨터 상호작용 입문</string>
-    <string name="subject_probability">확률 및 통계학</string>
-    <string name="subject_history">역사는 어떻게 서술되는가</string>
-    <string name="subject_face_action">외모와 인간행동</string>
+    <string name="subject_probability">확률과 통계 입문</string>
+    <string name="subject_history">역사는 어떻게 서술되는가?</string>
+    <string name="subject_face_action">외모와 인간 행동</string>
     <string name="subject_algorithm">알고리즘</string>
     <string name="subject_ip">인터넷 프로토콜</string>
 

@@ -251,14 +251,6 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
         }
     }
 
-//    protected boolean hasNextButton() {
-//        return ((ButtonBarHandler)getActivity()).hasNextButton();
-//    }
-//
-//    protected Button getNextButton() {
-//        return ((ButtonBarHandler)getActivity()).getNextButton();
-//    }
-
     public void finish() {
         getActivity().onBackPressed();
     }
@@ -267,8 +259,7 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
             Fragment caller, String fragmentClass, int requestCode, Bundle extras) {
         if (getActivity() instanceof PreferenceActivity) {
             PreferenceActivity preferenceActivity = (PreferenceActivity)getActivity();
-            preferenceActivity.startPreferencePanel(fragmentClass, extras,
-                    R.string.hello_world, null, caller, requestCode);
+            preferenceActivity.startPreferencePanel(fragmentClass, extras, R.string.tutorial_login, null, caller, requestCode);
             return true;
         } else {
             Log.w(TAG, "Parent isn't PreferenceActivity, thus there's no way to launch the "

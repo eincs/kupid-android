@@ -39,8 +39,8 @@ public final class DummyModels {
 		String headerCommon = RESOURCE.getString(R.string.category_header_common);
 		String headerSubject = RESOURCE.getString(R.string.category_header_subject);
 		CATEGORIES = Lists.newArrayList();
-		CATEGORIES.add(newCategory(0, R.string.setting_notice, R.string.setting_notice_desc, 2).setHeader(headerCommon));
-		CATEGORIES.add(newCategory(1, R.string.setting_schedule, R.string.setting_schedule_desc, 0));
+		CATEGORIES.add(newCategory(0, R.string.setting_notice, R.string.subject_notice_desc, 2).setHeader(headerCommon));
+		CATEGORIES.add(newCategory(1, R.string.setting_schedule, R.string.subject_schedule_desc, 0));
 		CATEGORIES.add(newCategory(3, R.string.subject_hci, R.string.subject_hci_desc, 1).setHeader(headerSubject));
 		CATEGORIES.add(newCategory(4, R.string.subject_face_action, R.string.subject_face_action_desc, 0));
 		CATEGORIES.add(newCategory(5, R.string.subject_probability, R.string.subject_probability_desc, 0));
