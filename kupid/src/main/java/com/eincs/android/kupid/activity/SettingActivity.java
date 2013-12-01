@@ -30,7 +30,7 @@ public class SettingActivity extends SherlockPreferenceActivity implements OnPre
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mController = KApplication.getController();
-        
+        setTitle(R.string.action_settings);
         addPreferencesFromResource(R.xml.preference);
         Preference logOutSettings = (Preference)findPreference("logoutSetting");
         logOutSettings.setOnPreferenceClickListener(this);

@@ -43,6 +43,8 @@
     <string name="setting_detail">Detail</string>
     <string name="setting_notice">Notice</string>
     <string name="setting_schedule">College schedule</string>
+    
+    <string name="setting_account">Account</string>
     <string name="setting_logout">Log out</string>
     <string name="setting_logout_message">Do you really want to log out?</string>
     

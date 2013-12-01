@@ -42,7 +42,7 @@
         </com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference>
     </PreferenceCategory>
     
-    <PreferenceCategory android:title="@string/setting_logout" >
+    <PreferenceCategory android:title="@string/setting_account" >
         <Preference 
             android:key="logoutSetting"
             android:title="@string/setting_logout" />
