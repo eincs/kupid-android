@@ -14,7 +14,6 @@ import com.eincs.android.kupid.model.KNotificationModel;
 import com.eincs.android.kupid.model.KTutorialModel;
 import com.eincs.android.kupid.model.ModelPredicates;
 import com.eincs.android.kupid.utils.DefaultThreadPoolExecutor;
-import com.google.common.base.Predicates;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.ListenableFuture;
