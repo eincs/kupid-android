@@ -14,7 +14,7 @@ public class SettingDetailActivity extends SherlockPreferenceActivity {
         super.onCreate(savedInstanceState);
         // 아래와 같이 설정합니다.
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        addPreferencesFromResource(R.xml.pref_detail);
+        addPreferencesFromResource(R.xml.preference_detail);
     }
     
     @Override

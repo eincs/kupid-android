@@ -21,11 +21,9 @@ public class CheckBoxAndSettingsPreference extends CheckBoxPreference {
     private TextView mSummaryText;
     private ImageView mSettingsButton;
     private Intent mSettingsIntent;
-    private Context mContext;
 
     public CheckBoxAndSettingsPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mContext = context;
         setLayoutResource(R.layout.preference_inputmethod);
         setWidgetLayoutResource(R.layout.preference_inputmethod_widget);
     }
@@ -34,28 +32,24 @@ public class CheckBoxAndSettingsPreference extends CheckBoxPreference {
     protected void onBindView(View view) {
         super.onBindView(view);
         View textLayout = view.findViewById(R.id.inputmethod_pref);
-        textLayout.setOnClickListener(
-                new OnClickListener() {
-                    @Override
-                    public void onClick(View arg0) {
-                        onCheckBoxClicked();
-                    }
-                });
-
+        textLayout.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onCheckBoxClicked();
+            }
+        });
         mSettingsButton = (ImageView) view.findViewById(R.id.inputmethod_settings);
         mTitleText = (TextView)view.findViewById(android.R.id.title);
         mSummaryText = (TextView)view.findViewById(android.R.id.summary);
-        mSettingsButton.setOnClickListener(
-                new OnClickListener() {
-                    @Override
-                    public void onClick(View clickedView) {
-                        onSettingsButtonClicked();
-                        Intent intent = new Intent(mContext, SettingDetailActivity.class);
-                        mContext.startActivity(intent);
-                    }
-                });
+        mSettingsButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onSettingsButtonClicked();
+                Intent intent = new Intent(getContext(), SettingDetailActivity.class);
+                getContext().startActivity(intent);
+            }
+        });
         mSettingsButton.setVisibility(View.VISIBLE);
-//        enableSettingsButton();
     }
 
     @Override

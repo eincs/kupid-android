@@ -52,16 +52,6 @@ public class CategoryActivity extends SherlockListActivity {
 	}
 	
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			onBackPressed();
-			break;
-		}
-		return true;
-	}
-	
-	@Override
 	protected void onResume() {
 		super.onResume();
 		mAdapter.addAllAsync(mRepository.getCategories());

@@ -21,7 +21,7 @@ public class SettingActivity extends SherlockPreferenceActivity implements OnPre
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         
         // 아래와 같이 설정합니다.
-        addPreferencesFromResource(R.xml.pref);
+        addPreferencesFromResource(R.xml.preference);
         Preference logOutSettings = (Preference)findPreference("logoutSetting");
         logOutSettings.setOnPreferenceClickListener(this);
     }

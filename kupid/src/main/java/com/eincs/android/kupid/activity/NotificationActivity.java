@@ -61,6 +61,19 @@ public class NotificationActivity extends SherlockActivity implements OnRefreshL
 		return true;
 	}
 
+	 @Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			onBackPressed();
+			break;
+		case R.id.action_real_all: {
+			promptReadAll();
+		}
+		}
+		return true;
+	}
+	 
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -73,22 +86,6 @@ public class NotificationActivity extends SherlockActivity implements OnRefreshL
 		KEventBus.getDefaultEventBus().unregister(this);
 	}
 	
-	public void onEventMainThread(KModelChangedEvent event) {
-		mAdapter.addAllAsync(mRepository.getNotifications(mCategoryId));
-	}
-	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		Dialogs.showAlertDialog(this, R.string.dialog_messagae_read_all, new Runnable() {
-			@Override
-			public void run() {
-				mRepository.readAllNotification(mCategoryId);
-				finish();
-			}
-		});
-		return true;
-	}
-	
 	@Override
 	public void onRefresh(PullToRefreshBase<ListView> refreshView) {
 		FakeDelay.executeWithDelay(new Runnable() {
@@ -98,7 +95,21 @@ public class NotificationActivity extends SherlockActivity implements OnRefreshL
 			}
 		}, 1000);
 	}
-
+	
+	public void onEventMainThread(KModelChangedEvent event) {
+		mAdapter.addAllAsync(mRepository.getNotifications(mCategoryId));
+	}
+	
+	public void promptReadAll() {
+		Dialogs.showAlertDialog(this, R.string.dialog_messagae_read_all, new Runnable() {
+			@Override
+			public void run() {
+				mRepository.readAllNotification(mCategoryId);
+				finish();
+			}
+		});
+	}
+	
 	private class NotificationAdapter extends AbsArrayAdapter<KNotificationModel> implements OnItemClickListener {
 
 		public NotificationAdapter(Context context) {
