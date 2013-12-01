@@ -77,7 +77,7 @@
         android:layout_height="fill_parent"
         android:paddingStart="15dip"
         android:paddingEnd="?android:attr/scrollbarSize"
-        android:src="@drawable/ic_launcher"
+        android:src="@drawable/ic_action_settings"
         android:contentDescription="@string/hello_world"
         android:layout_gravity="center"
         android:clickable="true"

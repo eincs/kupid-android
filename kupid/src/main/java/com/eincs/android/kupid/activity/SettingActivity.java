@@ -52,7 +52,6 @@ public class SettingActivity extends SherlockPreferenceActivity implements OnPre
 		Builder dialog = new AlertDialog.Builder(SettingActivity.this);
 		dialog.setTitle(R.string.setting_logout);
 		dialog.setMessage(R.string.setting_logout_message);
-		dialog.setIcon(R.drawable.ic_launcher);
 		dialog.setPositiveButton(android.R.string.yes, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
