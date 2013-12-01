@@ -44,6 +44,7 @@ public class NotificationActivity extends SherlockActivity implements OnRefreshL
 		setContentView(R.layout.activity_notification);
 		mTitle = Extras.getString(this, EXTRA_TITLE);
 		getSupportActionBar().setTitle(mTitle);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		mCategoryId = Extras.getString(this, EXTRA_CATEGORY_ID);
 		mRepository = KApplication.getRepositoy();
 		mAdapter = new NotificationAdapter(this);

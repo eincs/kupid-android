@@ -3,7 +3,6 @@ package com.eincs.android.kupid.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -12,6 +11,7 @@ import android.widget.ListView;
 
 import com.actionbarsherlock.app.SherlockListActivity;
 import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 import com.eincs.android.kupid.KApplication;
 import com.eincs.android.kupid.R;
 import com.eincs.android.kupid.database.Repository;
@@ -48,6 +48,16 @@ public class CategoryActivity extends SherlockListActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getSupportMenuInflater().inflate(R.menu.category, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			onBackPressed();
+			break;
+		}
 		return true;
 	}
 	

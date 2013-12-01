@@ -57,6 +57,7 @@ public class ContentActivity extends SherlockActivity implements
 		setContentView(R.layout.activity_content);
 		String activityTitle = Extras.getString(this, EXTRA_TITLE);
 		getSupportActionBar().setTitle(activityTitle);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		mNotificationId = Extras.getString(this, EXTRA_NOTIFICATION_ID);
 		mController = KApplication.getController();
 		mRepository = KApplication.getRepositoy();
@@ -120,6 +121,9 @@ public class ContentActivity extends SherlockActivity implements
 			break;
 		case R.id.action_view_original:
 			viewOriginal();
+			break;
+		case android.R.id.home:
+			onBackPressed();
 			break;
 		}
 		return true;
