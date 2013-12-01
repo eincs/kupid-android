@@ -58,5 +58,9 @@
     <string name="setting_sound_desc">새로운 알림이 왔을때 알림음을 재생합니다</string>
     <string name="setting_vibration_desc">새로운 알림이 왔을때 진동으로 알려줍니다</string>
     <string name="setting_logout_desc">앱에서 로그아웃하고 모든 정보를 지웁니다</string>
+    <string name="setting_detail_sound_desc">알림이 왔을때 알림을을 재생합니다</string>
+    <string name="setting_detail_vibration_desc">알림이 왔을때 진동을 울립니다</string>
+    <string name="setting_filtering_desc">특정 단어로 알림을 필터링합니다</string>
+    <string name="setting_advance_desc">이 알림에 대한 고급설정을 합니다</string>
 
 </resources>

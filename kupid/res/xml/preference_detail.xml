@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <PreferenceCategory android:title="@string/subject_algorithm">
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="detailSound"
-            android:title="@string/setting_sound"/>
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="detailVibration"
-            android:title="@string/setting_vibration"/>
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="detailFiltering"
-            android:title="@string/setting_filtering"/>
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="detailAdvanced"
-            android:title="@string/setting_advance"/>
-    </PreferenceCategory>
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="detailSound"
+        android:summary="@string/setting_detail_sound_desc"
+        android:title="@string/setting_sound" />
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="detailVibration"
+        android:summary="@string/setting_detail_vibration_desc"
+        android:title="@string/setting_vibration" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="detailFiltering"
+        android:summary="@string/setting_filtering_desc"
+        android:title="@string/setting_filtering" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="detailAdvanced"
+        android:summary="@string/setting_advance_desc"
+        android:title="@string/setting_advance" />
 
 </PreferenceScreen>
