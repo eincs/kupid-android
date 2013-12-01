@@ -17,7 +17,7 @@
     <string name="login_hint_id">Your KUPID ID</string>
     <string name="login_hint_pw">Your Password</string>
     <string name="hello_world">Hello world!</string>
-    <string name="please_wait">Please wait#8230;</string>
+    <string name="please_wait">Please wait&#8230;</string>
     
     <string name="exception_msg_no_such_user">Please type id and password</string>
     <string name="exception_msg_invalid_password">Please type id and password</string>

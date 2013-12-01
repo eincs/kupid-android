@@ -22,7 +22,8 @@ public final class Dialogs {
 	
 	public static SimpleDialogBuilder createPrompt(FragmentActivity activity, int requestCode) {
 		SimpleDialogBuilder builder = SimpleDialogFragment.createBuilder(activity, activity.getSupportFragmentManager());
-		builder.setTitle(R.string.app_name); // default title of the dialog is app_name
+		// default title of the dialog is app_name
+		builder.setTitle(R.string.app_name);
 		builder.setRequestCode(requestCode);
 		builder.setPositiveButtonText(android.R.string.yes);
 		builder.setNegativeButtonText(android.R.string.no);

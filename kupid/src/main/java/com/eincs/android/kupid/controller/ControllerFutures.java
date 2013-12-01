@@ -5,6 +5,7 @@ import java.util.concurrent.Executor;
 import android.app.Dialog;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.v4.app.DialogFragment;
 
 import com.eincs.android.kupid.utils.HandlerExecutor;
 import com.google.common.util.concurrent.FutureCallback;
@@ -21,6 +22,10 @@ public final class ControllerFutures {
 	}
 	
 	public static <T> void dismissDialogOnComplete(ListenableFuture<T> future, Dialog dialog) {
+		Futures.addCallback(future, new DialogCallback<T>(dialog), mCallbackExecutor);
+	}
+	
+	public static <T> void dismissDialogOnComplete(ListenableFuture<T> future, DialogFragment dialog) {
 		Futures.addCallback(future, new DialogCallback<T>(dialog), mCallbackExecutor);
 	}
 }

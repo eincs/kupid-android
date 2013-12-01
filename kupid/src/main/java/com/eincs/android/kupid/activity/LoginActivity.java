@@ -3,6 +3,7 @@ package com.eincs.android.kupid.activity;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -18,7 +19,7 @@ import com.eincs.android.kupid.model.KCredentialModel;
 import com.eincs.android.kupid.widget.Dialogs;
 import com.google.common.util.concurrent.ListenableFuture;
 
-public class LoginActivity extends Activity implements OnClickListener {
+public class LoginActivity extends FragmentActivity implements OnClickListener {
 
 	private Controller mController;
 	private EditText mEditId;
