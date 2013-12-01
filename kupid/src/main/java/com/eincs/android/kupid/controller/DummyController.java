@@ -54,6 +54,7 @@ public class DummyController implements Controller {
 			@Override
 			public Void call() throws Exception {
 				FakeDelay.delayNetwork();
+				mRepository.setCredential(null);
 				return null;
 			}
 		});

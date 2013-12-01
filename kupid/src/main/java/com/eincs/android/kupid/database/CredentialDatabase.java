@@ -18,8 +18,12 @@ public class CredentialDatabase {
 	}
 	
 	public void saveCredential(KCredentialModel credentialModel) {
+		String accessToken = Strings.nullToEmpty(null);
+		if (credentialModel != null) {
+			accessToken = credentialModel.getAccessToken();
+		}
 		Editor editor = mSharedPreference.edit();
-		editor.putString(PREFERENCE_KEY_ACCESS_TOKEN, credentialModel.getAccessToken());
+		editor.putString(PREFERENCE_KEY_ACCESS_TOKEN, accessToken);
 		editor.commit();
 	}
 	

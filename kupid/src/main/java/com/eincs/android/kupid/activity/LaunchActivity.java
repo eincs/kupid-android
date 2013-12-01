@@ -1,6 +1,7 @@
 package com.eincs.android.kupid.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -19,14 +20,9 @@ public class LaunchActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		mRepository = KApplication.getRepositoy();
 		setContentView(R.layout.activity_launch);
-	}
-	
-	@Override
-	protected void onResume() {
-		super.onResume();
 		moveNext(getIntent());
 	}
-	
+
 	@Override
 	protected void onNewIntent(Intent intent) {
 		super.onNewIntent(intent);
@@ -69,5 +65,10 @@ public class LaunchActivity extends Activity {
 		Intent nextIntent = new Intent(this, CategoryActivity.class);
 		startActivity(nextIntent);
 		finish();
+	}
+
+	public static void launch(Context context) {
+		Intent intent = new Intent(context, LaunchActivity.class);
+		context.startActivity(intent);
 	}
 }

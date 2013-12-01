@@ -23,7 +23,8 @@ import com.eincs.android.kupid.widget.CategoryItemView;
 import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
 
 public class CategoryActivity extends SherlockListActivity {
-
+	public static final String EXTRA_REDIRECT = "CategoryActivity.REDIRECT"; 
+	
 	private Repository mRepository;
 	private CategoryAdapter mAdapter;
 	private ListView mListView;
@@ -43,7 +44,16 @@ public class CategoryActivity extends SherlockListActivity {
 		mListView = getListView();
 		mListView.setAdapter(mAdapter);
 		mListView.setOnItemClickListener(mAdapter);
+		redirect(getIntent());
 	}
+
+	private void redirect(Intent intent) {
+		if(intent.hasExtra(EXTRA_REDIRECT)) {
+			LaunchActivity.launch(this);
+			finish();
+		}
+	}
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
