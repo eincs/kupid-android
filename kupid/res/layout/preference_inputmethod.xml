@@ -79,6 +79,7 @@
         android:paddingStart="15dip"
         android:paddingEnd="?android:attr/scrollbarSize"
         android:src="@drawable/ic_action_setting_detail"
+        android:contentDescription="@string/dummy"
         android:layout_gravity="center"
         android:clickable="true"
         android:focusable="true"

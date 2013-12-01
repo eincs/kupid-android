@@ -49,5 +49,6 @@
     <string name="subject_face_action">Human face and action</string>
     <string name="subject_algorithm">Algorithm</string>
     <string name="subject_ip">Internet Protocol</string>
+    <string name="dummy">Hello World!</string>
 
 </resources>

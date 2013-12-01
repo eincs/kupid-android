@@ -259,7 +259,7 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
             Fragment caller, String fragmentClass, int requestCode, Bundle extras) {
         if (getActivity() instanceof PreferenceActivity) {
             PreferenceActivity preferenceActivity = (PreferenceActivity)getActivity();
-            preferenceActivity.startPreferencePanel(fragmentClass, extras, R.string.tutorial_login, null, caller, requestCode);
+            preferenceActivity.startPreferencePanel(fragmentClass, extras, R.string.dummy, null, caller, requestCode);
             return true;
         } else {
             Log.w(TAG, "Parent isn't PreferenceActivity, thus there's no way to launch the "
