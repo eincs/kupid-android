@@ -1,9 +1,5 @@
 package com.eincs.android.kupid.widget;
 
-import com.eincs.android.kupid.R;
-import com.eincs.android.kupid.activity.SettingDetailActivity;
-import com.eincs.android.kupid.activity.SettingsPreferenceFragment;
-
 import android.content.Context;
 import android.content.Intent;
 import android.preference.CheckBoxPreference;
@@ -12,6 +8,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.eincs.android.kupid.R;
+import com.eincs.android.kupid.activity.SettingDetailActivity;
+import com.eincs.android.kupid.activity.SettingsPreferenceFragment;
 
 public class CheckBoxAndSettingsPreference extends CheckBoxPreference {
     private static final float DISABLED_ALPHA = 0.4f;

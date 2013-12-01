@@ -1,8 +1,5 @@
 package com.eincs.android.kupid.activity;
 
-import com.eincs.android.kupid.R;
-import com.eincs.android.kupid.widget.DialogCreatable;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -20,6 +17,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import com.eincs.android.kupid.R;
+import com.eincs.android.kupid.widget.DialogCreatable;
 
 /**
  * Base class for Settings fragments, with some helper functions and dialog management.

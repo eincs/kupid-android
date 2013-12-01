@@ -8,6 +8,7 @@
         <item name="actionMenuTextColor">@android:color/white</item>
         <item name="android:displayOptions">showHome|homeAsUp|showTitle</item>
 		<item name="displayOptions">showHome|homeAsUp|showTitle</item>
+		<item name="sdlDialogStyle">@style/KAppTheme.DialogStyleLight</item>
     </style>
 
     <style name="KAppTheme.NoActionBar" parent="Theme.Sherlock.Light.NoActionBar">
@@ -40,5 +41,11 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="KAppTheme.DialogStyleLight" parent="DialogStyleLight">
+	    <!-- anything can be left out: -->
+	    <item name="titleTextColor">@color/crimson</item>
+	    <item name="titleSeparatorColor">@color/crimson</item>
+	</style>
 
 </resources>

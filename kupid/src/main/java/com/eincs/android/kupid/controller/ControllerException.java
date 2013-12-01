@@ -1,8 +1,8 @@
 package com.eincs.android.kupid.controller;
 
-import com.eincs.android.kupid.KApplication;
-
 import android.content.res.Resources;
+
+import com.eincs.android.kupid.KApplication;
 
 public class ControllerException extends Exception {
 	private static final long serialVersionUID = -70114761316592707L;

@@ -1,11 +1,11 @@
 package com.eincs.android.kupid.database;
 
-import com.eincs.android.kupid.model.KCredentialModel;
-import com.google.common.base.Strings;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+
+import com.eincs.android.kupid.model.KCredentialModel;
+import com.google.common.base.Strings;
 
 public class CredentialDatabase {
 	private static final String PREFERENCE_NAME = "credentials";

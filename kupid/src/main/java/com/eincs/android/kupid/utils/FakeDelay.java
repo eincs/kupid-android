@@ -2,12 +2,12 @@ package com.eincs.android.kupid.utils;
 
 import java.util.concurrent.TimeUnit;
 
-import com.google.common.base.Strings;
-import com.google.common.util.concurrent.Uninterruptibles;
-
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.util.Log;
+
+import com.google.common.base.Strings;
+import com.google.common.util.concurrent.Uninterruptibles;
 
 public final class FakeDelay {
 	public static String TAG = "FakeDelay";

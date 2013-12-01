@@ -1,9 +1,5 @@
 package com.eincs.android.kupid.activity;
 
-import butterknife.Views;
-
-import com.eincs.android.kupid.R;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import butterknife.Views;
+
+import com.eincs.android.kupid.R;
 
 public class TutorialContentFragment extends Fragment {
 	public static final String ARG_CONTENT = "TutorialContentFragment.ARG_CONTENT"; 

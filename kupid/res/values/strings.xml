@@ -22,7 +22,8 @@
     <string name="exception_msg_no_such_user">Please type id and password</string>
     <string name="exception_msg_invalid_password">Please type id and password</string>
     
-    <string name="dialog_messagae_read_all">Rad all messages?</string>
+    <string name="dialog_messagae_read_all_title">Read all notification?</string>
+    <string name="dialog_messagae_read_all_message">Do you want to mark all notificaions to read of this category?</string>
     
     <string name="category_header_common">Common Notification</string>
     <string name="category_header_subject">Subject Notification</string>

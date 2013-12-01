@@ -10,7 +10,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import butterknife.Views;
 
-import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.eincs.android.kupid.KApplication;
@@ -28,9 +28,14 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
-public class NotificationActivity extends SherlockActivity implements OnRefreshListener<ListView> {
+import eu.inmite.android.lib.dialogs.ISimpleDialogListener;
+import eu.inmite.android.lib.dialogs.SimpleDialogFragment.SimpleDialogBuilder;
+
+public class NotificationActivity extends SherlockFragmentActivity implements OnRefreshListener<ListView>, ISimpleDialogListener {
 	public static final String EXTRA_TITLE = "NotificationActivity.EXTRA_TITLE";
 	public static final String EXTRA_CATEGORY_ID = "NotificationActivity.EXTRA_CATEGORY_ID";
+	
+	public static final int RC_REAL_ALL = 0;
 	
 	private String mTitle;
 	private String mCategoryId;
@@ -101,15 +106,29 @@ public class NotificationActivity extends SherlockActivity implements OnRefreshL
 	}
 	
 	public void promptReadAll() {
-		Dialogs.showAlertDialog(this, R.string.dialog_messagae_read_all, new Runnable() {
-			@Override
-			public void run() {
-				mRepository.readAllNotification(mCategoryId);
-				finish();
-			}
-		});
+		SimpleDialogBuilder builder = Dialogs.createPrompt(this, RC_REAL_ALL);
+		builder.setMessage(R.string.dialog_messagae_read_all_message);
+		builder.setTitle(R.string.dialog_messagae_read_all_title);
+		builder.show();
 	}
 	
+	@Override
+	public void onPositiveButtonClicked(int requestCode) {
+		switch (requestCode) {
+		case RC_REAL_ALL:
+			mRepository.readAllNotification(mCategoryId);
+			finish();
+			break;
+		default:
+			break;
+		}
+	}
+	
+	@Override
+	public void onNegativeButtonClicked(int requestCode) {
+		
+	}
+
 	private class NotificationAdapter extends AbsArrayAdapter<KNotificationModel> implements OnItemClickListener {
 
 		public NotificationAdapter(Context context) {
@@ -133,4 +152,5 @@ public class NotificationActivity extends SherlockActivity implements OnRefreshL
 			startActivity(intent);
 		}
 	}
+
 }
