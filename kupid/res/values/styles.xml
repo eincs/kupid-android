@@ -22,6 +22,7 @@
         <item name="background">@color/crimson</item>
         <item name="android:actionMenuTextColor">@android:color/white</item>
         <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:icon">@android:color/transparent</item>
     </style>
 
     <style name="Widget.Light" />

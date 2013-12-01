@@ -6,6 +6,8 @@
         <item name="android:titleTextStyle">@style/KAppTheme.ActionBar.TitleTextStyle</item>
         <item name="android:actionMenuTextColor">@android:color/white</item>
         <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:displayOptions">showHome|homeAsUp|showTitle</item>
+		<item name="displayOptions">showHome|homeAsUp|showTitle</item>
     </style>
 
     <style name="KAppTheme.NoActionBar" parent="Theme.Sherlock.Light.NoActionBar">
