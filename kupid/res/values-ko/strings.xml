@@ -51,5 +51,13 @@
     <string name="subject_face_action">외모와 인간 행동</string>
     <string name="subject_algorithm">알고리즘</string>
     <string name="subject_ip">인터넷 프로토콜</string>
+    <string name="setting_notice_desc">공지사항에 대한 알림 세부 설정</string>
+    <string name="setting_schedule_desc">학사일정에 대한 알림 세부 설정</string>
+    <string name="setting_hci_desc">해당 과목에 대한 알림 세부 설정</string>
+    <string name="setting_probability_desc">해당 과목에 대한 알림 세부 설정</string>
+    <string name="setting_history_desc">해당 과목에 대한 알림 세부 설정</string>
+    <string name="setting_sound_desc">새로운 알림이 왔을때 알림음을 재생합니다</string>
+    <string name="setting_vibration_desc">새로운 알림이 왔을때 진동으로 알려줍니다</string>
+    <string name="setting_logout_desc">앱에서 로그아웃하고 모든 정보를 지웁니다</string>
 
 </resources>

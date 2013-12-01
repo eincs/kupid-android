@@ -4,10 +4,11 @@
     <PreferenceCategory android:title="@string/setting_alarm">
         <RingtonePreference
             android:ringtoneType="notification"
-            android:summary="ringtone summary"
-            android:title="@string/setting_sound" />
+            android:summary="@string/setting_notice_desc"
+            android:title="@string/setting_sound"/>
         <CheckBoxPreference
             android:defaultValue="true"
+            android:summary="@string/setting_sound_desc"
             android:key="settingVibration"
             android:title="@string/setting_vibration"/>
     </PreferenceCategory>
@@ -15,29 +16,29 @@
     <PreferenceCategory android:title="@string/setting_detail">
         <com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference
             android:title="@string/setting_notice"
-            android:summary="summary"
+            android:summary="@string/setting_notice_desc"
             android:key="settingNotice"
             android:defaultValue="true">
         </com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference>
         <com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference
             android:title="@string/setting_schedule"
-            android:summary="summary"
+            android:summary="@string/setting_schedule_desc"
             android:key="settingSchedule"
             android:defaultValue="true">
         </com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference>
         <com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference
             android:title="@string/subject_hci"
-            android:summary="summary"
+            android:summary="@string/setting_hci_desc"
             android:key="settingSubject1">
         </com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference>
         <com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference
             android:title="@string/subject_probability"
-            android:summary="summary"
-            android:key="settingSubject2">
+            android:summary="@string/setting_probability_desc"
+            android:key="@string/setting_history_desc">
         </com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference>
         <com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference
             android:title="@string/subject_history"
-            android:summary="summary"
+            android:summary="@string/setting_history_desc"
             android:key="settingSubject3">
         </com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference>
     </PreferenceCategory>
@@ -45,6 +46,7 @@
     <PreferenceCategory android:title="@string/setting_account" >
         <Preference 
             android:key="logoutSetting"
+            android:summary="@string/setting_logout_desc"
             android:title="@string/setting_logout" />
     </PreferenceCategory>
 

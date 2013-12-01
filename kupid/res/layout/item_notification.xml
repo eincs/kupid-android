@@ -38,6 +38,7 @@
             android:id="@+id/item_noti_content1"
             android:layout_width="match_parent"
             android:layout_height="24dp"
+            android:layout_alignWithParentIfMissing="true"
             android:layout_toLeftOf="@+id/item_noti_star"
             android:ellipsize="end"
             android:gravity="bottom"
@@ -50,6 +51,7 @@
             android:id="@+id/item_noti_tags"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="true"
             android:layout_below="@id/item_noti_content1"
             android:layout_toLeftOf="@id/item_noti_star"
             android:orientation="horizontal" >
@@ -112,7 +114,8 @@
             android:layout_alignBottom="@id/item_noti_tags"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:background="@android:drawable/star_off" />
+            android:background="@android:drawable/star_off"
+            android:visibility="gone" />
     </RelativeLayout>
 
 </com.eincs.android.kupid.widget.NotificationItemView>

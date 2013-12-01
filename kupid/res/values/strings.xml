@@ -50,5 +50,13 @@
     <string name="subject_algorithm">Algorithm</string>
     <string name="subject_ip">Internet Protocol</string>
     <string name="dummy">Hello World!</string>
+    <string name="setting_notice_desc">KUPID의 새로운 공지사항</string>
+    <string name="setting_schedule_desc">새로 공지된 학사 일정</string>
+    <string name="setting_hci_desc">해당 과목에 대한 알림 세부 설정</string>
+    <string name="setting_probability_desc">해당 과목에 대한 알림 세부 설정</string>
+    <string name="setting_history_desc">해당 과목에 대한 알림 세부 설정</string>
+    <string name="setting_sound_desc">새로운 알림이 왔을때 알림음을 재생합니다</string>
+    <string name="setting_vibration_desc">새로운 알림이 왔을때 진동으로 알려줍니다</string>
+    <string name="setting_logout_desc">앱에서 로그아웃하고 모든 정보를 지웁니다</string>
 
 </resources>
