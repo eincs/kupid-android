@@ -10,3 +10,6 @@
 [submodule "external/pulltorefresh"]
 	path = external/pulltorefresh
 	url = https://github.com/eincs/Android-PullToRefresh.git
+[submodule "external/android-styled-dialogs"]
+	path = external/android-styled-dialogs
+	url = https://github.com/eincs/android-styled-dialogs.git
