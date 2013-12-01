@@ -26,6 +26,7 @@
         <item name="android:titleTextStyle">@style/KAppTheme.ActionBar.TitleTextStyle</item>
         <item name="android:actionMenuTextColor">@android:color/white</item>
         <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:customNavigationLayout">@layout/logo</item>
     </style>
 
     <style name="KAppTheme.Light.TranslucentActionBar" parent="Theme.Sherlock.Light">

@@ -37,6 +37,7 @@ public class CategoryActivity extends SherlockListActivity {
 				.headerLayout(R.layout.header)
 				.contentLayout(R.layout.activity_category);
 		setContentView(helper.createView(this));
+		getSupportActionBar().setTitle(null);
 		helper.initActionBar(this);
 		mRepository = KApplication.getRepositoy();
 		mAdapter = new CategoryAdapter(this);
