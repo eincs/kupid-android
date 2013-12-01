@@ -21,6 +21,7 @@
 		<module>external/fadingactionbar</module>
 		<module>external/actionbarshelock</module>
 		<module>external/pulltorefresh</module>
+		<module>external/android-styled-dialogs</module>
 	</modules>
 	
 	<dependencyManagement>
