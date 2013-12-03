@@ -153,7 +153,7 @@ public class ContentActivity extends SherlockActivity implements
 		String description = getResources().getString(R.string.notification_content);
 		
 		Calendar cal = Calendar.getInstance();
-		cal.set(2013, GregorianCalendar.NOVEMBER, 5, 23, 59);
+		cal.set(2013, GregorianCalendar.NOVEMBER, 23, 23, 59);
 		Intent intent = new Intent(Intent.ACTION_EDIT);
 		intent.setType("vnd.android.cursor.item/event");
 		intent.putExtra("beginTime", cal.getTimeInMillis()+60*60*1000);
