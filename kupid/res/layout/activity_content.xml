@@ -28,7 +28,7 @@
                 android:id="@+id/content_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Something Important!"
+                android:text="Grading Policy "
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -89,8 +89,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/content_tags"
+                android:paddingBottom="10dp"
                 android:paddingTop="10dp"
-                android:text="하하 이거 어떻게 한담 ㅋㅋ" />
+                android:text="@string/notification_content"
+                android:textSize="15sp" />
         </RelativeLayout>
 
         <LinearLayout
@@ -104,23 +106,51 @@
             android:paddingRight="10dp"
             android:paddingTop="10dp" >
 
-            <com.eincs.android.kupid.widget.SquareImageButton
+            <Button
                 android:id="@+id/content_btn1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/ic_action_export_calendar"
+                android:ellipsize="none"
+                android:gravity="center"
+                android:text="@string/action_export_calendar"
+                android:textSize="15sp" />
 
-            <com.eincs.android.kupid.widget.SquareImageButton
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray" />
+
+            <Button
                 android:id="@+id/content_btn2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/ic_action_export_app"
+                android:ellipsize="none"
+                android:gravity="center"
+                android:text="@string/action_export_text"
+                android:textSize="15sp" />
 
-            <com.eincs.android.kupid.widget.SquareImageButton
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray" />
+
+            <Button
                 android:id="@+id/content_btn3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/ic_action_view_original"
+                android:ellipsize="none"
+                android:gravity="center"
+                android:text="@string/action_view_original"
+                android:textSize="15sp" />
         </LinearLayout>
     </LinearLayout>
 

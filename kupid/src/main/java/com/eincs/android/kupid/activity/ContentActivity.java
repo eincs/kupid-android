@@ -5,7 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import butterknife.Views;
@@ -45,9 +45,9 @@ public class ContentActivity extends SherlockActivity implements
 	private TextView mTag3;
 	private TextView mContent;
 
-	private ImageButton mAction1;
-	private ImageButton mAction2;
-	private ImageButton mAction3;
+	private Button mAction1;
+	private Button mAction2;
+	private Button mAction3;
 
 	private KNotificationContentModel model;
 
@@ -61,19 +61,19 @@ public class ContentActivity extends SherlockActivity implements
 		mNotificationId = Extras.getString(this, EXTRA_NOTIFICATION_ID);
 		mController = KApplication.getController();
 		mRepository = KApplication.getRepositoy();
-		mScroll = (PullToRefreshScrollView) Views.findById(this, R.id.content_scroll);
+		mScroll = Views.findById(this, R.id.content_scroll);
 		mScroll.setOnRefreshListener(this);
-		mTitle = (TextView) Views.findById(this, R.id.content_title);
-		mTime = (TextView) Views.findById(this, R.id.content_time);
-		mTag1 = (TextView) Views.findById(this, R.id.content_tag1);
-		mTag1 = (TextView) Views.findById(this, R.id.content_tag2);
-		mTag3 = (TextView) Views.findById(this, R.id.content_tag3);
-		mContent = (TextView) Views.findById(this, R.id.content_text);
-		mAction1 = (ImageButton) Views.findById(this, R.id.content_btn1);
+		mTitle = Views.findById(this, R.id.content_title);
+		mTime = Views.findById(this, R.id.content_time);
+		mTag1 = Views.findById(this, R.id.content_tag1);
+		mTag1 = Views.findById(this, R.id.content_tag2);
+		mTag3 = Views.findById(this, R.id.content_tag3);
+		mContent = Views.findById(this, R.id.content_text);
+		mAction1 = Views.findById(this, R.id.content_btn1);
 		mAction1.setOnClickListener(this);
-		mAction2 = (ImageButton) Views.findById(this, R.id.content_btn2);
+		mAction2 = Views.findById(this, R.id.content_btn2);
 		mAction2.setOnClickListener(this);
-		mAction3 = (ImageButton) Views.findById(this, R.id.content_btn3);
+		mAction3 = Views.findById(this, R.id.content_btn3);
 		mAction3.setOnClickListener(this);
 	}
 
