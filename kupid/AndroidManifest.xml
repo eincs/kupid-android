@@ -20,7 +20,7 @@
     <uses-feature android:name="android.hardware.microphone" android:required="false" />
 
     <uses-sdk
-        android:minSdkVersion="14"
+        android:minSdkVersion="8"
         android:targetSdkVersion="18" />
 
     <application
@@ -46,12 +46,12 @@
 		<activity
             android:name="com.eincs.android.kupid.activity.TutorialActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+            android:theme="@style/KAppTheme.NoActionBar">
         </activity>
         <activity
             android:name="com.eincs.android.kupid.activity.LoginActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+            android:theme="@style/KAppTheme.NoActionBar">
         </activity>
 		<activity
 		    android:name=".activity.CategoryActivity"
