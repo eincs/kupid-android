@@ -1,8 +1,12 @@
 package com.eincs.android.kupid.activity;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.CalendarContract.Events;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -145,15 +149,22 @@ public class ContentActivity extends SherlockActivity implements
 	}
 
 	private void exportToCalendar() {
-		Uri calendars = Uri.parse("content://com.android.calendar/time/");
-		Intent intent = new Intent();
-		intent.setData(calendars);
-		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		String title = "Grading Policy";
+		String description = getResources().getString(R.string.notification_content);
+		
+		Calendar cal = Calendar.getInstance();
+		cal.set(2013, GregorianCalendar.NOVEMBER, 5, 23, 59);
+		Intent intent = new Intent(Intent.ACTION_EDIT);
+		intent.setType("vnd.android.cursor.item/event");
+		intent.putExtra("beginTime", cal.getTimeInMillis()+60*60*1000);
+		intent.putExtra("endTime", cal.getTimeInMillis()+60*60*1000);
+		intent.putExtra(Events.TITLE, title);
+		intent.putExtra(Events.DESCRIPTION, description);
 		startActivity(intent);
 	}
 
 	private void exportAsText() {
-		String shareBody = "Here is the share content body";
+		String shareBody = getResources().getString(R.string.notification_content);
 		Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
 		sharingIntent.setType("text/plain");
 		sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
