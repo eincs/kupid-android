@@ -28,6 +28,8 @@
         <item name="android:actionMenuTextColor">@android:color/white</item>
         <item name="actionMenuTextColor">@android:color/white</item>
         <item name="android:customNavigationLayout">@layout/logo</item>
+        <item name="android:selectableItemBackground">@drawable/activated_item_background</item>
+        <item name="selectableItemBackground">@drawable/activated_item_background</item>
     </style>
 
     <style name="KAppTheme.Light.TranslucentActionBar" parent="Theme.Sherlock.Light">
