@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.Toast;
 import butterknife.Views;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -117,6 +118,8 @@ public class NotificationActivity extends SherlockFragmentActivity implements On
 		switch (requestCode) {
 		case RC_REAL_ALL:
 			mRepository.readAllNotification(mCategoryId);
+			String message = getString(R.string.readall_message, mTitle);
+			Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
 			finish();
 			break;
 		default:
