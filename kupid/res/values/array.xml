@@ -6,4 +6,22 @@
     <string-array name="logout_values">
         <item>logout</item>
     </string-array>
+    <string-array name="background_entries">
+        <item>@string/setting_background_auto</item>
+        <item>@string/setting_background_spring</item>
+        <item>@string/setting_background_summer</item>
+        <item>@string/setting_background_fall</item>
+        <item>@string/setting_background_winter</item>
+        <item>@string/setting_background_engineering</item>
+        <item>@string/setting_background_liberalart</item>
+    </string-array>
+    <string-array name="background_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
 </resources>

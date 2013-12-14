@@ -64,5 +64,15 @@
     <string name="setting_filtering_desc">특정 단어로 알림을 필터링합니다</string>
     <string name="setting_advance_desc">이 알림에 대한 고급설정을 합니다</string>
     <string name="notification_content" formatted="false">I probably should have made it very clear about the grading policy. I remember talking about it in class but I kind of forgot the exact rule I stated. So here I clarify the grading policy (I think it is more or less same to what I stated in class, and I think at any case, it is a reasonable one).\n\n&#8211; Mid term: 25%\n&#8211; Hw 1: 10%\n&#8211; Hw 2&#8211;1: 10%\n&#8211; Hw 2&#8211;2: 20%\n&#8211; Hw 3: 20%\n&#8211; Hw 4: 15%\n&#8211; + alpha &#8211; quiz, regular revisions made to Balsamiq, class participation, etc.</string>
-    
+    <string name="setting_background_auto">자동으로 설정</string>
+    <string name="setting_background_spring">봄 테마</string>
+    <string name="setting_background_summer">여름 테마</string>
+    <string name="setting_background_fall">가을 테마</string>
+    <string name="setting_background_winter">겨울 테마</string>
+    <string name="setting_background_engineering">자연계 캠퍼스 테마</string>
+    <string name="setting_background_liberalart">인문계 캠퍼스 테마</string>
+    <string name="setting_background_cateogory">테마설정</string>
+    <string name="setting_background">헤더 배경화면 설정</string>
+    <string name="setting_background_desc">첫 화면 상단 배경화면 테마를 설정합니다.</string>
+
 </resources>

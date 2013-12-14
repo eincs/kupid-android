@@ -1,50 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <PreferenceCategory android:title="@string/setting_alarm">
+    <PreferenceCategory android:title="@string/setting_background" >
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/background_entries"
+            android:entryValues="@array/background_values"
+            android:key="background"
+            android:summary="@string/setting_background_desc"
+            android:title="@string/setting_background" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/setting_alarm" >
         <RingtonePreference
             android:ringtoneType="notification"
             android:summary="@string/setting_notice_desc"
-            android:title="@string/setting_sound"/>
+            android:title="@string/setting_sound" />
+
         <CheckBoxPreference
             android:defaultValue="true"
-            android:summary="@string/setting_sound_desc"
             android:key="settingVibration"
-            android:title="@string/setting_vibration"/>
+            android:summary="@string/setting_sound_desc"
+            android:title="@string/setting_vibration" />
     </PreferenceCategory>
-    
-    <PreferenceCategory android:title="@string/setting_detail">
+    <PreferenceCategory android:title="@string/setting_detail" >
         <com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference
-            android:title="@string/setting_notice"
-            android:summary="@string/setting_notice_desc"
+            android:defaultValue="true"
             android:key="settingNotice"
-            android:defaultValue="true">
+            android:summary="@string/setting_notice_desc"
+            android:title="@string/setting_notice" >
         </com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference>
         <com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference
-            android:title="@string/setting_schedule"
-            android:summary="@string/setting_schedule_desc"
+            android:defaultValue="true"
             android:key="settingSchedule"
-            android:defaultValue="true">
+            android:summary="@string/setting_schedule_desc"
+            android:title="@string/setting_schedule" >
         </com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference>
         <com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference
-            android:title="@string/subject_hci"
+            android:key="settingSubject1"
             android:summary="@string/setting_hci_desc"
-            android:key="settingSubject1">
+            android:title="@string/subject_hci" >
         </com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference>
         <com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference
-            android:title="@string/subject_probability"
+            android:key="@string/setting_history_desc"
             android:summary="@string/setting_probability_desc"
-            android:key="@string/setting_history_desc">
+            android:title="@string/subject_probability" >
         </com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference>
         <com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference
-            android:title="@string/subject_history"
+            android:key="settingSubject3"
             android:summary="@string/setting_history_desc"
-            android:key="settingSubject3">
+            android:title="@string/subject_history" >
         </com.eincs.android.kupid.widget.CheckBoxAndSettingsPreference>
     </PreferenceCategory>
-    
     <PreferenceCategory android:title="@string/setting_account" >
-        <Preference 
+        <Preference
             android:key="logoutSetting"
             android:summary="@string/setting_logout_desc"
             android:title="@string/setting_logout" />
