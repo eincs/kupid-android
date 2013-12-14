@@ -7,9 +7,9 @@
     <string name="action_export_text">Export as Text</string>
     <string name="action_view_original">View Original</string>
     <string name="action_read_all">Read All</string>
-    <string name="action_lecture_info">강의 정보</string>
-    <string name="action_search">알림 검색</string>
-    <string name="action_search_hint">제목, 내용으로 검색</string>
+    <string name="action_lecture_info">Lecture Info</string>
+    <string name="action_search">Search Noti</string>
+    <string name="action_search_hint">Search with title and contents</string>
     <string name="tutorial_login">Log in</string>
     <string name="tutorial_description1">Get new KUPID notification immediately</string>
     <string name="tutorial_description2">Get your new notice with few clicks</string>
@@ -28,7 +28,7 @@
     <string name="category_header_subject">Subject Notification</string>
     <string name="subject_notice_desc">Notice on KUPID</string>
     <string name="subject_schedule_desc">College schedule for Korea University Students</string>
-    <string name="subject_hci_desc">CNCE402 화(2) 교양관 606 목(2) 교양관 606</string>
+    <string name="subject_hci_desc">CNCE402 Tue(2) Woodang 606 목(2) Woodang 606</string>
     <string name="subject_probability_desc">Probability and statistics</string>
     <string name="subject_history_desc">How history descripted</string>
     <string name="subject_face_action_desc">Human face and action</string>
@@ -53,18 +53,18 @@
     <string name="subject_algorithm">Algorithm</string>
     <string name="subject_ip">Internet Protocol</string>
     <string name="dummy">Hello World!</string>
-    <string name="setting_notice_desc">KUPID의 새로운 공지사항</string>
-    <string name="setting_schedule_desc">새로 공지된 학사 일정</string>
-    <string name="setting_hci_desc">해당 과목에 대한 알림 세부 설정</string>
-    <string name="setting_probability_desc">해당 과목에 대한 알림 세부 설정</string>
-    <string name="setting_history_desc">해당 과목에 대한 알림 세부 설정</string>
-    <string name="setting_sound_desc">새로운 알림이 왔을때 알림음을 재생합니다</string>
-    <string name="setting_vibration_desc">새로운 알림이 왔을때 진동으로 알려줍니다</string>
-    <string name="setting_logout_desc">앱에서 로그아웃하고 모든 정보를 지웁니다</string>
-    <string name="setting_detail_sound_desc">알림이 왔을때 알림을을 재생합니다</string>
-    <string name="setting_detail_vibration_desc">알림이 왔을때 진동을 울립니다</string>
-    <string name="setting_filtering_desc">특정 단어로 알림을 필터링합니다</string>
-    <string name="setting_advance_desc">이 알림에 대한 고급설정을 합니다</string>
+    <string name="setting_notice_desc">New Notifications</string>
+    <string name="setting_schedule_desc">New Schedules</string>
+    <string name="setting_hci_desc">Detail settings of subject</string>
+    <string name="setting_probability_desc">Detail settings of subject</string>
+    <string name="setting_history_desc">Detail settings of subject</string>
+    <string name="setting_sound_desc">Play sound when receive new notification.</string>
+    <string name="setting_vibration_desc">Vibrate when receive new notification.</string>
+    <string name="setting_logout_desc">Log out from application.</string>
+    <string name="setting_detail_sound_desc">Play sound when receive new notification.</string>
+    <string name="setting_detail_vibration_desc">Vibrate when receive new notification.</string>
+    <string name="setting_filtering_desc">Filtering with specific word.</string>
+    <string name="setting_advance_desc">Advanced setting about notification.</string>
     <string name="notification_content" formatted="false">I probably should have made it very clear about the grading policy. I remember talking about it in class but I kind of forgot the exact rule I stated. So here I clarify the grading policy (I think it is more or less same to what I stated in class, and I think at any case, it is a reasonable one).\n\n&#8211; Mid term: 25%\n&#8211; Hw 1: 10%\n&#8211; Hw 2&#8211;1: 10%\n&#8211; Hw 2&#8211;2: 20%\n&#8211; Hw 3: 20%\n&#8211; Hw 4: 15%\n&#8211; + alpha &#8211; quiz, regular revisions made to Balsamiq, class participation, etc.</string>
     <string name="setting_background_auto">Auto</string>
     <string name="setting_background_spring">Spring Theme</string>
@@ -73,10 +73,10 @@
     <string name="setting_background_winter">Winter Theme</string>
     <string name="setting_background_engineering">Engineering Campus Theme</string>
     <string name="setting_background_liberalart">Liberal Campus Theme</string>
-    <string name="setting_background_cateogory">테마설정</string>
-    <string name="setting_background">헤더 배경화면 설정</string>
-    <string name="setting_background_desc">첫 화면 상단 배경화면 테마를 설정합니다.</string>
-    <string name="readall_message">\'%s\'에 있는 모든 알림을 모두 읽음으로 표시하였습니다.</string>
-    <string name="message_starred_notification">10건의 중요 표시된 알림</string>
+    <string name="setting_background_cateogory">Theme Setting</string>
+    <string name="setting_background">Setting Header Background</string>
+    <string name="setting_background_desc">Setting header background theme</string>
+    <string name="readall_message">Mark as read all in \'%s\'</string>
+    <string name="message_starred_notification">10 important notifications</string>
 
 </resources>
