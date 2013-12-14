@@ -64,5 +64,5 @@
     <string name="setting_filtering_desc">특정 단어로 알림을 필터링합니다</string>
     <string name="setting_advance_desc">이 알림에 대한 고급설정을 합니다</string>
     <string name="notification_content" formatted="false">I probably should have made it very clear about the grading policy. I remember talking about it in class but I kind of forgot the exact rule I stated. So here I clarify the grading policy (I think it is more or less same to what I stated in class, and I think at any case, it is a reasonable one).\n\n&#8211; Mid term: 25%\n&#8211; Hw 1: 10%\n&#8211; Hw 2&#8211;1: 10%\n&#8211; Hw 2&#8211;2: 20%\n&#8211; Hw 3: 20%\n&#8211; Hw 4: 15%\n&#8211; + alpha &#8211; quiz, regular revisions made to Balsamiq, class participation, etc.</string>
-
+    
 </resources>
