@@ -7,6 +7,9 @@
     <string name="action_export_text">Export as Text</string>
     <string name="action_view_original">View Original</string>
     <string name="action_read_all">Read All</string>
+    <string name="action_lecture_info">강의 정보</string>
+    <string name="action_search">알림 검색</string>
+    <string name="action_search_hint">제목, 내용으로 검색</string>
     <string name="tutorial_login">Log in</string>
     <string name="tutorial_description1">Get new KUPID notification immediately</string>
     <string name="tutorial_description2">Get your new notice with few clicks</string>

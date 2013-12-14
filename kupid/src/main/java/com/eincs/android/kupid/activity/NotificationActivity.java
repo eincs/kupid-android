@@ -1,7 +1,9 @@
 package com.eincs.android.kupid.activity;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,8 @@ import butterknife.Views;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.widget.SearchView;
+import com.actionbarsherlock.widget.SearchView.OnQueryTextListener;
 import com.eincs.android.kupid.KApplication;
 import com.eincs.android.kupid.R;
 import com.eincs.android.kupid.database.Repository;
@@ -64,6 +68,18 @@ public class NotificationActivity extends SherlockFragmentActivity implements On
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getSupportMenuInflater().inflate(R.menu.notification, menu);
+		
+		// 알림 검색 관련 메뉴 세팅
+		String queryHint = getString(R.string.action_search_hint);
+		MenuItem searchItem = menu.findItem(R.id.action_search);
+		SearchView searchView = (SearchView) searchItem.getActionView();
+		searchView.setQueryHint(queryHint);
+		searchView.setOnQueryTextListener(mQueryTextListener);
+		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+		if (null != searchManager) {
+			searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+		}
+		searchView.setIconifiedByDefault(true);
 		return true;
 	}
 
@@ -75,6 +91,11 @@ public class NotificationActivity extends SherlockFragmentActivity implements On
 			break;
 		case R.id.action_real_all: {
 			promptReadAll();
+			break;
+		}
+		case R.id.action_lecture_info: {
+			showLectureInfo();
+			break;
 		}
 		}
 		return true;
@@ -131,7 +152,26 @@ public class NotificationActivity extends SherlockFragmentActivity implements On
 	public void onNegativeButtonClicked(int requestCode) {
 		
 	}
+	
+	private void showLectureInfo() {
+		Uri uri = Uri.parse("http://m.korea.ac.kr/eku/subject/schedule_st01.jsp?year=2013&term=2R&term_nm=2%ED%95%99%EA%B8%B0&lec_no=2013_2R_CNCE406_00_4728&lec_nm=%EC%9D%B8%EA%B0%84%EC%BB%B4%ED%93%A8%ED%84%B0%EC%83%81%ED%98%B8%EC%9E%91%EC%9A%A9%EC%9E%85%EB%AC%B8%28%EC%98%81%EA%B0%95%29&dept_cd=4728&code=&yearTerm=#");
+		Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+		startActivity(intent);
+	}
 
+	private OnQueryTextListener mQueryTextListener = new OnQueryTextListener() {
+		@Override
+		public boolean onQueryTextSubmit(String query) {
+			return false;
+		}
+
+		@Override
+		public boolean onQueryTextChange(String newText) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+	};
+	
 	private class NotificationAdapter extends AbsArrayAdapter<KNotificationModel> implements OnItemClickListener {
 
 		public NotificationAdapter(Context context) {

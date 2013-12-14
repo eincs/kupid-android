@@ -1,47 +1,28 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <style name="KAppTheme" parent="Theme.Sherlock.Light">
-        <item name="android:actionBarStyle">@style/Widget.ActionBar</item>
         <item name="actionBarStyle">@style/Widget.ActionBar</item>
-        <item name="android:titleTextStyle">@style/KAppTheme.ActionBar.TitleTextStyle</item>
-        <item name="android:actionMenuTextColor">@android:color/white</item>
         <item name="actionMenuTextColor">@android:color/white</item>
-        <item name="android:displayOptions">showHome|homeAsUp|showTitle</item>
         <item name="displayOptions">showHome|homeAsUp|showTitle</item>
         <item name="sdlDialogStyle">@style/KAppTheme.DialogStyleLight</item>
+        <item name="searchAutoCompleteTextView">@style/SearchViewStyle</item>
     </style>
 
     <style name="KAppTheme.NoActionBar" parent="Theme.Sherlock.Light.NoActionBar">
-        <item name="android:actionBarStyle">@style/Widget.ActionBar</item>
         <item name="actionBarStyle">@style/Widget.ActionBar</item>
-        <item name="android:titleTextStyle">@style/KAppTheme.ActionBar.TitleTextStyle</item>
-        <item name="android:actionMenuTextColor">@android:color/white</item>
         <item name="actionMenuTextColor">@android:color/white</item>
     </style>
 
     <style name="KAppTheme.TranslucentActionBar" parent="Theme.Sherlock.Light">
-        <item name="android:actionBarStyle">@style/Widget.ActionBar.Transparent</item>
-        <item name="android:windowActionBarOverlay">true</item>
         <item name="actionBarStyle">@style/Widget.ActionBar.Transparent</item>
         <item name="windowActionBarOverlay">true</item>
-        <item name="android:titleTextStyle">@style/KAppTheme.ActionBar.TitleTextStyle</item>
-        <item name="android:actionMenuTextColor">@android:color/white</item>
         <item name="actionMenuTextColor">@android:color/white</item>
-        <item name="android:customNavigationLayout">@layout/logo</item>
-        <item name="android:selectableItemBackground">@drawable/activated_item_background</item>
         <item name="selectableItemBackground">@drawable/activated_item_background</item>
     </style>
 
     <style name="KAppTheme.Light.TranslucentActionBar" parent="Theme.Sherlock.Light">
-        <item name="android:actionBarStyle">@style/Widget.Light.ActionBar.Transparent</item>
-        <item name="android:windowActionBarOverlay">true</item>
         <item name="actionBarStyle">@style/Widget.Light.ActionBar.Transparent</item>
         <item name="windowActionBarOverlay">true</item>
-    </style>
-
-    <style name="KAppTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
-        <item name="android:textColor">@android:color/white</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="KAppTheme.DialogStyleLight" parent="DialogStyleLight">
@@ -50,7 +31,9 @@
     </style>
 
     <style name="SDL.Dialog" parent="android:Theme">
-		<item name="sdlDialogStyle">@style/DialogStyleLight</item>
-	</style>
-	
+        <item name="sdlDialogStyle">@style/DialogStyleLight</item>
+    </style>
+
+    <style name="SearchViewStyle" parent="Widget.Sherlock.SearchAutoCompleteTextView"></style>
+
 </resources>

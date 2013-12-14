@@ -7,7 +7,10 @@
     <string name="action_export_text">공유하기</string>
     <string name="action_view_original">원본보기</string>
     <string name="action_read_all">모두 읽음</string>
+    <string name="action_lecture_info">강의 정보</string>
+    <string name="action_search">알림 검색</string>
     <string name="tutorial_login">로그인</string>
+    <string name="action_search_hint">제목, 내용으로 검색</string>
     <string name="tutorial_description1">새로운 KUPID 알림을 푸시를 통해 바로바로 받아보세요!</string>
     <string name="tutorial_description2">간단한 단계를 통해 빠르게 알림을 확인하세요!</string>
     <string name="tutorial_description3">알림을 확인하기 위해 매번 로그인하지 않아도 됩니다!</string>
