@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -63,8 +64,14 @@ public class NotificationActivity extends SherlockFragmentActivity implements On
 		mListView.setAdapter(mAdapter);
 		mListView.setOnItemClickListener(mAdapter);
 		mListView.setOnRefreshListener(this);
+		mListView.getRefreshableView().addHeaderView(inflateHeaderView());
 	}
 
+	private View inflateHeaderView() {
+		View headerView = LayoutInflater.from(this).inflate(R.layout.item_notification_header, null);
+		return headerView;
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getSupportMenuInflater().inflate(R.menu.notification, menu);
@@ -167,7 +174,6 @@ public class NotificationActivity extends SherlockFragmentActivity implements On
 
 		@Override
 		public boolean onQueryTextChange(String newText) {
-			// TODO Auto-generated method stub
 			return false;
 		}
 	};
@@ -188,12 +194,16 @@ public class NotificationActivity extends SherlockFragmentActivity implements On
 		
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-			KNotificationModel notificationModel = getItem(position - 1);
+			position = position -1;
+			if (position == 0) {
+				// 헤더뷰를 클릭한 경우는 무시한다.
+				return;
+			}
+			KNotificationModel notificationModel = getItem(position);
 			Intent intent = new Intent(NotificationActivity.this, ContentActivity.class);
 			intent.putExtra(ContentActivity.EXTRA_TITLE, mTitle);
 			intent.putExtra(ContentActivity.EXTRA_NOTIFICATION_ID, notificationModel.getId());
 			startActivity(intent);
 		}
 	}
-
 }
