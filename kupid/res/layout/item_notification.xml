@@ -115,7 +115,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:background="@android:drawable/star_off"
-            android:visibility="gone" />
+            android:visibility="visible" />
     </RelativeLayout>
 
 </com.eincs.android.kupid.widget.NotificationItemView>
