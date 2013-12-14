@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">KUPID 알림</string>
-    <string name="action_settings">세팅</string>
+    <string name="action_settings">설정</string>
     <string name="action_export_calendar">일정추가</string>
     <string name="action_export_text">공유하기</string>
     <string name="action_view_original">원본보기</string>
