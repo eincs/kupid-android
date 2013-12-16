@@ -199,7 +199,7 @@ public class NotificationActivity extends SherlockFragmentActivity implements On
 				// 헤더뷰를 클릭한 경우는 무시한다.
 				return;
 			}
-			KNotificationModel notificationModel = getItem(position);
+			KNotificationModel notificationModel = getItem(position-1);
 			Intent intent = new Intent(NotificationActivity.this, ContentActivity.class);
 			intent.putExtra(ContentActivity.EXTRA_TITLE, mTitle);
 			intent.putExtra(ContentActivity.EXTRA_NOTIFICATION_ID, notificationModel.getId());
