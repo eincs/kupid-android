@@ -1,5 +1,7 @@
 ## KUPID-Notifier
 
+![ScreenShot](https://raw2.github.com/eincs/kupid-android/master/docs/screenshot.jpg)
+
 이 프로젝트는 고려대학교의 지식기반 포탈 시스템(KUPID)에 새로 올라오는 공지사항, 과제물 등에 대해
 푸시 알림을 주는 것을 시뮬레이션하는 안드로이드 어플리케이션 입니다.
 기본적으로는 UI을 어떻게 가져갈지 일환으로 만들어진 것으로,
