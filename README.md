@@ -7,14 +7,41 @@
 기본적으로는 UI을 어떻게 가져갈지 일환으로 만들어진 것으로,
 고려대학교 정보통신대학 컴퓨터통신공학부에서 2013년 2학기 과목으로 개설된 인간과 컴퓨터 상호작용 입문의 텀프로젝트 결과물입니다.
 
-### How to Build
+### Setting up a develop environment
 
-빌드하기 위해서는 다음과 같은 것들을 설치하시거나 사용하셔야 합니다.
+본 안드로이드 프로젝트는 Maven기반으로 구성되어 있습니다. Maven기반으로 구성된 프로젝트지만 Maven으로 빌드는 안합니다. 이클립스 ADT를 이용하여 빌드하세요. Maven은 그냥 디펜던시 해결과 몇 가지 플러그인의 도움을 받기위해 사용합니다.
 
-- 이클립스: 본 프로젝트는 이클립스 기반으로 만들어졌습니다.
+#### 개발 환경 구성을 시작하기 전에 필요한 것들
+
+이 프로젝트의 개발 환경을 구성하기 위해서는 다음과 같은 것들이 필요합니다.
+
+- [Eclipse]: 본 프로젝트는 이클립스 기반으로 만들어졌습니다.(*그냥 ADT에 포함된 이클립스를 사용해도 됨)
+- [Android SDK]: 안드로이드 개발하기 위해 필요한 SDK입니다.
+- [Android Developer Tools](http://developer.android.com/sdk/installing/installing-adt.html) (자세한 방법은 링크를 참고)
 - [Git]: 몇 가지 오픈소스를 가져다 쓰는데 이클립스 ADT가 aar포맷을 지원하지 않으므로 git에서 제공하는 submodule을 통해 가져다 쓰고 있습니다.
-- [m2e]: 종속성을 해결하고 여러가지 기능을 위해 Maven 프로젝트로 구성되어 있습니다. 따라서 m2e 플러그인을 이클립스에 설치하셔야 합니다.
+- [m2e]: 종속성을 해결하고 여러가지 기능을 위해 Maven 프로젝트로 구성되어 있습니다. 따라서 m2e 플러그인을 이클립스에 설치하셔야 합니다. Eclipse 다운로드 할때 J2EE를 다운받으셨으면 m3e가 기본 내장되어 있으므로 따로 신경 쓰지 않아도 됩니다.
 - [m2e-android]: 안드로이드 프로젝트를 Maven기반으로 구성하였을때 이클립스에 로드하기 위한 이클립스 플러그인 입니다.
+
+#### 소스를 이클립스로 Import하기
+
+현재 리포지터리의 소스들을 이클립스로 Import하여 개발을 하기 위한 방법은 다음과 같습니다.
+
+1. master 브렌치를 클론 받습니다.
+
+	git clone -b master https://github.com/eincs/kupid-android.git
+		
+2. 서브모듈을 설정합니다.
+
+	cd kupid-android
+	git submodule init
+	git submodule update 
+		
+3. 이클립스에 Maven 프로젝트들을 Import 합니다.
+	- Package Explorer 오른쪽 클릭하여 Import를 선택
+	- Existing Maven Project를 선택하여, 소스를 클론 받은 폴더를 선택
+	- 그냥 모든 프로젝트를 Import하면 됩니다.
+		
+5. 필요한 경우, kupid-android 프로젝트의 Target API를 최신의 Google API로 바꾸어 줍니다.
 
 ### Notice
 
@@ -45,6 +72,8 @@
 	 *   0. You just DO WHAT THE FUCK YOU WANT TO. 
 	 */
 	 
-[Git]: http://git-scm.com/
+[git]: http://git-scm.com/
 [m2e]: http://www.eclipse.org/m2e/
 [m2e-android]: http://rgladwell.github.io/m2e-android/
+[eclipse]: http://www.eclipse.org/downloads/
+[Android SDK]: http://developer.android.com/sdk/index.html
