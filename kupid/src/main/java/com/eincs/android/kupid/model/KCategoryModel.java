@@ -1,58 +1,55 @@
 package com.eincs.android.kupid.model;
 
 public class KCategoryModel implements IModel {
-	
-	private String id;
-	
-	private String header;
 
-	private String title;
-	
-	private String description;
-	
-	private Integer unreadCount;
+    private String id;
 
-	public String getId() {
-		return id;
-	}
+    private String header;
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    private String title;
 
-	public String getHeader() {
-		return header;
-	}
+    private String description;
 
-	public KCategoryModel setHeader(String header) {
-		this.header = header;
-		return this;
-	}
+    private Integer unreadCount;
 
-	public String getTitle() {
-		return title;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getHeader() {
+        return header;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public KCategoryModel setHeader(String header) {
+        this.header = header;
+        return this;
+    }
 
-	public Integer getUnreadCount() {
-		return unreadCount;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setUnreadCount(Integer unreadCount) {
-		this.unreadCount = unreadCount;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	
-	
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Integer getUnreadCount() {
+        return unreadCount;
+    }
+
+    public void setUnreadCount(Integer unreadCount) {
+        this.unreadCount = unreadCount;
+    }
 }

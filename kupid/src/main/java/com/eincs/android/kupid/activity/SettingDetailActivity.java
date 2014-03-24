@@ -8,23 +8,23 @@ import com.eincs.android.kupid.R;
 
 public class SettingDetailActivity extends SherlockPreferenceActivity {
 
-	@SuppressWarnings("deprecation")
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		// 아래와 같이 설정합니다.
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		addPreferencesFromResource(R.xml.preference_detail);
-		setTitle(R.string.subject_hci);
-	}
+    @SuppressWarnings("deprecation")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // 아래와 같이 설정합니다.
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        addPreferencesFromResource(R.xml.preference_detail);
+        setTitle(R.string.subject_hci);
+    }
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			onBackPressed();
-			break;
-		}
-		return true;
-	}
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+            onBackPressed();
+            break;
+        }
+        return true;
+    }
 }

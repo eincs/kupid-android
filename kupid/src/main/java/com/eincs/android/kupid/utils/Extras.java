@@ -4,13 +4,14 @@ import android.app.Activity;
 import android.os.Bundle;
 
 public final class Extras {
-	private Extras() {}
-	
-	public static String getString(Activity activity, String key) {
-		Bundle extras = activity.getIntent().getExtras();
-		if (extras != null) {
-			return extras.getString(key);
-		}
-		return null;
-	}
+    private Extras() {
+    }
+
+    public static String getString(Activity activity, String key) {
+        Bundle extras = activity.getIntent().getExtras();
+        if (extras != null) {
+            return extras.getString(key);
+        }
+        return null;
+    }
 }

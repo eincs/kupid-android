@@ -39,8 +39,8 @@ public class CheckBoxAndSettingsPreference extends CheckBoxPreference {
             }
         });
         mSettingsButton = (ImageView) view.findViewById(R.id.inputmethod_settings);
-        mTitleText = (TextView)view.findViewById(android.R.id.title);
-        mSummaryText = (TextView)view.findViewById(android.R.id.summary);
+        mTitleText = (TextView) view.findViewById(android.R.id.title);
+        mSummaryText = (TextView) view.findViewById(android.R.id.summary);
         mSettingsButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {

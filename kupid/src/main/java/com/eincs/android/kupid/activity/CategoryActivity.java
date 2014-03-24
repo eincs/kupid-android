@@ -23,90 +23,89 @@ import com.eincs.android.kupid.widget.CategoryItemView;
 import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
 
 public class CategoryActivity extends SherlockListActivity {
-	public static final String EXTRA_REDIRECT = "CategoryActivity.REDIRECT"; 
-	
-	private Repository mRepository;
-	private CategoryAdapter mAdapter;
-	private ListView mListView;
+    public static final String EXTRA_REDIRECT = "CategoryActivity.REDIRECT";
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		FadingActionBarHelper helper = new FadingActionBarHelper()
-				.actionBarBackground(R.drawable.ab_background)
-				.headerLayout(R.layout.header)
-				.contentLayout(R.layout.activity_category);
-		setContentView(helper.createView(this));
-		getSupportActionBar().setTitle(null);
-		helper.initActionBar(this);
-		mRepository = KApplication.getRepositoy();
-		mAdapter = new CategoryAdapter(this);
-		mAdapter.addAllAsync(mRepository.getCategories());
-		mListView = getListView();
-		mListView.setAdapter(mAdapter);
-		mListView.setOnItemClickListener(mAdapter);
-		redirect(getIntent());
-	}
+    private Repository mRepository;
+    private CategoryAdapter mAdapter;
+    private ListView mListView;
 
-	private void redirect(Intent intent) {
-		if(intent.hasExtra(EXTRA_REDIRECT)) {
-			LaunchActivity.launch(this);
-			finish();
-		}
-	}
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        FadingActionBarHelper helper = new FadingActionBarHelper()
+                .actionBarBackground(R.drawable.ab_background)
+                .headerLayout(R.layout.header)
+                .contentLayout(R.layout.activity_category);
+        setContentView(helper.createView(this));
+        getSupportActionBar().setTitle(null);
+        helper.initActionBar(this);
+        mRepository = KApplication.getRepositoy();
+        mAdapter = new CategoryAdapter(this);
+        mAdapter.addAllAsync(mRepository.getCategories());
+        mListView = getListView();
+        mListView.setAdapter(mAdapter);
+        mListView.setOnItemClickListener(mAdapter);
+        redirect(getIntent());
+    }
 
+    private void redirect(Intent intent) {
+        if (intent.hasExtra(EXTRA_REDIRECT)) {
+            LaunchActivity.launch(this);
+            finish();
+        }
+    }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getSupportMenuInflater().inflate(R.menu.category, menu);
-		return true;
-	}
-	
-	@Override
-	protected void onResume() {
-		super.onResume();
-		mAdapter.addAllAsync(mRepository.getCategories());
-		KEventBus.getDefaultEventBus().registerSticky(this);
-	}
-	
-	@Override
-	protected void onPause() {
-		super.onPause();
-		KEventBus.getDefaultEventBus().unregister(this);
-	}
-	
-	public void onEventMainThread(KModelChangedEvent event) {
-		mAdapter.addAllAsync(mRepository.getCategories());
-	}
-	
-	@Override
-	public boolean onMenuItemSelected(int featureId, MenuItem item) {
-		Intent intent = new Intent(this, SettingActivity.class);
-		startActivity(intent);
-		return true;
-	}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getSupportMenuInflater().inflate(R.menu.category, menu);
+        return true;
+    }
 
-	private class CategoryAdapter extends AbsArrayAdapter<KCategoryModel> implements OnItemClickListener {
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mAdapter.addAllAsync(mRepository.getCategories());
+        KEventBus.getDefaultEventBus().registerSticky(this);
+    }
 
-		public CategoryAdapter(Context context) {
-			super(context, R.layout.item_category);
-		}
+    @Override
+    protected void onPause() {
+        super.onPause();
+        KEventBus.getDefaultEventBus().unregister(this);
+    }
 
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
-			KCategoryModel categoryModel = getItem(position);
-			CategoryItemView itemView = (CategoryItemView) getOrCreateView(convertView, parent);
-			itemView.setContent(categoryModel);
-			return itemView;
-		}
-		
-		@Override
-		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-			KCategoryModel categoryModel = getItem(position - 1);
-			Intent intent = new Intent(CategoryActivity.this, NotificationActivity.class);
-			intent.putExtra(NotificationActivity.EXTRA_TITLE, categoryModel.getTitle());
-			intent.putExtra(NotificationActivity.EXTRA_CATEGORY_ID, categoryModel.getId());
-			startActivity(intent);
-		}
-	}
+    public void onEventMainThread(KModelChangedEvent event) {
+        mAdapter.addAllAsync(mRepository.getCategories());
+    }
+
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        Intent intent = new Intent(this, SettingActivity.class);
+        startActivity(intent);
+        return true;
+    }
+
+    private class CategoryAdapter extends AbsArrayAdapter<KCategoryModel> implements OnItemClickListener {
+
+        public CategoryAdapter(Context context) {
+            super(context, R.layout.item_category);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            KCategoryModel categoryModel = getItem(position);
+            CategoryItemView itemView = (CategoryItemView) getOrCreateView(convertView, parent);
+            itemView.setContent(categoryModel);
+            return itemView;
+        }
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            KCategoryModel categoryModel = getItem(position - 1);
+            Intent intent = new Intent(CategoryActivity.this, NotificationActivity.class);
+            intent.putExtra(NotificationActivity.EXTRA_TITLE, categoryModel.getTitle());
+            intent.putExtra(NotificationActivity.EXTRA_CATEGORY_ID, categoryModel.getId());
+            startActivity(intent);
+        }
+    }
 }

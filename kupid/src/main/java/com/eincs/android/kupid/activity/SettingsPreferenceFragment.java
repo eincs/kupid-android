@@ -67,7 +67,7 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
         if (mHelpUrl != null) {
             Intent helpIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mHelpUrl));
             helpIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-                | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                    | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
             MenuItem helpItem = menu.add(0, MENU_HELP, 0, R.string.app_name);
             helpItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
             helpItem.setIntent(helpIntent);
@@ -75,8 +75,8 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
     }
 
     /*
-     * The name is intentionally made different from Activity#finish(), so that
-     * users won't misunderstand its meaning.
+     * The name is intentionally made different from Activity#finish(), so that users won't
+     * misunderstand its meaning.
      */
     public final void finishFragment() {
         getActivity().onBackPressed();
@@ -141,9 +141,8 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
     }
 
     /**
-     * Sets the OnCancelListener of the dialog shown. This method can only be
-     * called after showDialog(int) and before removeDialog(int). The method
-     * does nothing otherwise.
+     * Sets the OnCancelListener of the dialog shown. This method can only be called after
+     * showDialog(int) and before removeDialog(int). The method does nothing otherwise.
      */
     protected void setOnCancelListener(DialogInterface.OnCancelListener listener) {
         if (mDialogFragment != null) {
@@ -152,9 +151,8 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
     }
 
     /**
-     * Sets the OnDismissListener of the dialog shown. This method can only be
-     * called after showDialog(int) and before removeDialog(int). The method
-     * does nothing otherwise.
+     * Sets the OnDismissListener of the dialog shown. This method can only be called after
+     * showDialog(int) and before removeDialog(int). The method does nothing otherwise.
      */
     protected void setOnDismissListener(DialogInterface.OnDismissListener listener) {
         if (mDialogFragment != null) {
@@ -258,7 +256,7 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
     public boolean startFragment(
             Fragment caller, String fragmentClass, int requestCode, Bundle extras) {
         if (getActivity() instanceof PreferenceActivity) {
-            PreferenceActivity preferenceActivity = (PreferenceActivity)getActivity();
+            PreferenceActivity preferenceActivity = (PreferenceActivity) getActivity();
             preferenceActivity.startPreferencePanel(fragmentClass, extras, R.string.dummy, null, caller, requestCode);
             return true;
         } else {
@@ -268,5 +266,4 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
             return false;
         }
     }
-
 }
