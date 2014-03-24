@@ -42,8 +42,8 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-		</activity>
-		<activity
+        </activity>
+        <activity
             android:name="com.eincs.android.kupid.activity.TutorialActivity"
             android:screenOrientation="portrait"
             android:theme="@style/KAppTheme.NoActionBar">
@@ -53,16 +53,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/KAppTheme.NoActionBar">
         </activity>
-		<activity
-		    android:name=".activity.CategoryActivity"
-		    android:screenOrientation="portrait"
-		    android:theme="@style/KAppTheme.TranslucentActionBar">
-		</activity>
-		<activity android:name=".activity.NotificationActivity" android:screenOrientation="portrait"></activity>
-		<activity android:name=".activity.ContentActivity" android:screenOrientation="portrait"></activity>
-		<activity android:name=".activity.SettingActivity" android:screenOrientation="portrait"></activity>
-		<activity android:name=".activity.SettingDetailActivity" android:screenOrientation="portrait"></activity>
-		
+        <activity
+            android:name=".activity.CategoryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/KAppTheme.TranslucentActionBar">
+        </activity>
+        <activity android:name=".activity.NotificationActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.ContentActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.SettingActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.SettingDetailActivity" android:screenOrientation="portrait"></activity>
+        
     </application>
 
 </manifest>
