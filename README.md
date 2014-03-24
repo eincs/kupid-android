@@ -15,7 +15,7 @@
 
 이 프로젝트의 개발 환경을 구성하기 위해서는 다음과 같은 것들이 필요합니다.
 
-- [Eclipse]: 본 프로젝트는 이클립스 기반으로 만들어졌습니다.(*그냥 ADT에 포함된 이클립스를 사용해도 됨)
+- [Eclipse]: 본 프로젝트는 이클립스 기반으로 만들어졌습니다.(ADT에 포함된 이클립스를 사용해도 됨)
 - [Android SDK]: 안드로이드 개발하기 위해 필요한 SDK입니다.
 - [Android Developer Tools](http://developer.android.com/sdk/installing/installing-adt.html) (자세한 방법은 링크를 참고)
 - [Git]: 몇 가지 오픈소스를 가져다 쓰는데 이클립스 ADT가 aar포맷을 지원하지 않으므로 git에서 제공하는 submodule을 통해 가져다 쓰고 있습니다.
